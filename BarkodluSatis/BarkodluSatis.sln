@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarkodluSatis", "BarkodluSatis\BarkodluSatis.csproj", "{A45765E2-69D1-4DDE-B1E3-3F0FFD151316}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BarkodluSatisSetup", "BarkodluSatisSetup\BarkodluSatisSetup.vdproj", "{5A82CD87-4E68-45BC-9DFE-F74F95F9D75E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lisans", "Lisans\Lisans.csproj", "{703A29C8-5136-45A9-9B28-8F0274B3EB5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A45765E2-69D1-4DDE-B1E3-3F0FFD151316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45765E2-69D1-4DDE-B1E3-3F0FFD151316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45765E2-69D1-4DDE-B1E3-3F0FFD151316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45765E2-69D1-4DDE-B1E3-3F0FFD151316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A82CD87-4E68-45BC-9DFE-F74F95F9D75E}.Debug|Any CPU.ActiveCfg = Debug
+		{5A82CD87-4E68-45BC-9DFE-F74F95F9D75E}.Release|Any CPU.ActiveCfg = Release
+		{703A29C8-5136-45A9-9B28-8F0274B3EB5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703A29C8-5136-45A9-9B28-8F0274B3EB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703A29C8-5136-45A9-9B28-8F0274B3EB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703A29C8-5136-45A9-9B28-8F0274B3EB5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81911C9C-61C9-4319-B3D8-02794ED07AA3}
+	EndGlobalSection
+EndGlobal
