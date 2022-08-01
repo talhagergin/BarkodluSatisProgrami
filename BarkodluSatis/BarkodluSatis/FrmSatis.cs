@@ -17,6 +17,7 @@ namespace BarkodluSatis
             InitializeComponent();
         }
         BarkodDbEntities db = new BarkodDbEntities();
+        public int _musteriNo { get; set; }
         private void txtBarkod_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -358,7 +359,6 @@ namespace BarkodluSatis
                     db.Satis.Add(satis);
                     db.SaveChanges();
                     
-
                     if (!satisIade)
                     {
                         Islemler.StokAzalt(dgwSatisListesi.Rows[i].Cells["Barkod"].Value.ToString(), Islemler.DoubleYap(dgwSatisListesi.Rows[i].Cells["Miktar"].Value.ToString()));
@@ -401,10 +401,20 @@ namespace BarkodluSatis
                         io.Nakit = Islemler.DoubleYap(lblNakit.Text);
                         io.Kart = Islemler.DoubleYap(lblKart.Text);
                         break;
+                    case "Veresiye":
+                        io.Veresiye= Islemler.DoubleYap(txtGenelToplam.Text);
+                        io.Nakit = 0;
+                        io.Kart = 0;
+                        break;
+
                 }
                 db.IslemOzet.Add(io);
                 db.SaveChanges();
-
+                MusteriVeIslemNo islemvemusterino = new MusteriVeIslemNo();
+                islemvemusterino.IslemNo = islemNo;
+                islemvemusterino.MusteriNo = _musteriNo;
+                db.MusteriVeIslemNo.Add(islemvemusterino);
+                db.SaveChanges();
                 var islemNoArtir = db.Islem.First();
                 islemNoArtir.IslemNo += 1;
                 db.SaveChanges();
@@ -527,6 +537,13 @@ namespace BarkodluSatis
             {
                 chSatisIadeIslem.Text = "Satış Yapılıyor";
             }
+        }
+
+        private void btnVeresiye_Click(object sender, EventArgs e)
+        {
+            string tutar = txtGenelToplam.Text;
+            FrmMusteriBilgi musteri = new FrmMusteriBilgi(tutar);
+            musteri.Show();
         }
     }
 }

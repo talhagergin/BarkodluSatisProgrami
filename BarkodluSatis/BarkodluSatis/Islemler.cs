@@ -108,7 +108,26 @@ namespace BarkodluSatis
                         case "Gider":
                             dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
-                    }
+                        case "MusteriNo":
+                            dgv.Columns[i].HeaderText = "Müşteri No"; break;
+                        case "GenelBorc":
+                            dgv.Columns[i].HeaderText = "Genel Borç";
+                            dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
+                        case "Odenen":
+                            dgv.Columns[i].HeaderText = "Ödenen";
+                            dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
+                        case "Kalan":
+                            dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
+                        case "Veresiye":
+                            dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
+                        case "Eklenen":
+                            dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
+                 }
                 }
             }
         }

@@ -179,7 +179,7 @@
             // 
             this.txtUrunSayisi.BackColor = System.Drawing.Color.White;
             this.txtUrunSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtUrunSayisi.Location = new System.Drawing.Point(466, 260);
+            this.txtUrunSayisi.Location = new System.Drawing.Point(467, 257);
             this.txtUrunSayisi.Name = "txtUrunSayisi";
             this.txtUrunSayisi.ReadOnly = true;
             this.txtUrunSayisi.Size = new System.Drawing.Size(115, 26);
@@ -192,7 +192,7 @@
             this.lStandart10.AutoSize = true;
             this.lStandart10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lStandart10.ForeColor = System.Drawing.Color.Navy;
-            this.lStandart10.Location = new System.Drawing.Point(371, 263);
+            this.lStandart10.Location = new System.Drawing.Point(372, 260);
             this.lStandart10.Name = "lStandart10";
             this.lStandart10.Size = new System.Drawing.Size(89, 20);
             this.lStandart10.TabIndex = 18;

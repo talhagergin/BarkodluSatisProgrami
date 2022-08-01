@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Lisans;
 namespace BarkodluSatis
 {
     public partial class FrmLogin : Form
@@ -35,6 +35,10 @@ namespace BarkodluSatis
                             if (bak != null)
                             {
                                 Cursor.Current = Cursors.WaitCursor;
+
+                                GuvenlikKontrol kontrol = new GuvenlikKontrol();
+                                if(kontrol.KontrolYap())
+                                {
                                 FrmBaslangic f = new FrmBaslangic();
                                 f.btnSatisIslemi.Enabled = (bool)bak.Satis;
                                 f.btnGenelRapor.Enabled = (bool)bak.Rapor;
@@ -46,6 +50,11 @@ namespace BarkodluSatis
                                 f.lblKullanici.Text = bak.AdSoyad;
                                 f.Show();
                                 this.Hide();
+                                }
+
+                              
+
+
                                 Cursor.Current = Cursors.Default;
                             }
                             else
@@ -104,6 +113,13 @@ namespace BarkodluSatis
             {
                 GirisYap();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Lic lic = new Lic();
+            label1.Text = lic.CpuNo() + "\n" + lic.CpuKarakterToplam().ToString();
+
         }
     }
 }

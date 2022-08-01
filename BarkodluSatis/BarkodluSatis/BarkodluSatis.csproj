@@ -57,6 +57,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Lisans, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lisans\bin\Debug\Lisans.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -100,6 +104,23 @@
     <Compile Include="Barkod.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BarkodDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BarkodDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BorcOzet.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FirmaBilgi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FirmaBorc.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FirmaBorcNo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="FrmAyarlar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +133,29 @@
     <Compile Include="FrmBaslangic.Designer.cs">
       <DependentUpon>FrmBaslangic.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBorcOdeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBorcOdeme.Designer.cs">
+      <DependentUpon>FrmBorcOdeme.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDetayGoster.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDetayGoster.Designer.cs">
       <DependentUpon>FrmDetayGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFirma.Designer.cs">
+      <DependentUpon>FrmFirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFirmaBorcDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFirmaBorcDetay.Designer.cs">
+      <DependentUpon>FrmFirmaBorcDetay.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmFiyatGuncelle.cs">
       <SubType>Form</SubType>
@@ -142,11 +181,35 @@
     <Compile Include="FrmHizliButonUrunEkle.Designer.cs">
       <DependentUpon>FrmHizliButonUrunEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLisans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLisans.Designer.cs">
+      <DependentUpon>FrmLisans.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMusteriBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMusteriBilgi.Designer.cs">
+      <DependentUpon>FrmMusteriBilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMusteriBorcDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMusteriBorcDetay.Designer.cs">
+      <DependentUpon>FrmMusteriBorcDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMusteriDetayGoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMusteriDetayGoster.Designer.cs">
+      <DependentUpon>FrmMusteriDetayGoster.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNakitKart.cs">
       <SubType>Form</SubType>
@@ -190,6 +253,10 @@
     <Compile Include="FrmUrunGrubuEkle.Designer.cs">
       <DependentUpon>FrmUrunGrubuEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guvenlik.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GuvenlikKontrol.cs" />
     <Compile Include="HizliUrun.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -217,6 +284,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MusteriBorcTakip.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MusteriNumara.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MusteriVeIslemNo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Nesnelerim.cs" />
     <Compile Include="Program.cs" />
@@ -248,8 +324,17 @@
     <EmbeddedResource Include="FrmBaslangic.resx">
       <DependentUpon>FrmBaslangic.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBorcOdeme.resx">
+      <DependentUpon>FrmBorcOdeme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDetayGoster.resx">
       <DependentUpon>FrmDetayGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFirma.resx">
+      <DependentUpon>FrmFirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFirmaBorcDetay.resx">
+      <DependentUpon>FrmFirmaBorcDetay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFiyatGuncelle.resx">
       <DependentUpon>FrmFiyatGuncelle.cs</DependentUpon>
@@ -263,8 +348,20 @@
     <EmbeddedResource Include="FrmHizliButonUrunEkle.resx">
       <DependentUpon>FrmHizliButonUrunEkle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLisans.resx">
+      <DependentUpon>FrmLisans.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMusteriBilgi.resx">
+      <DependentUpon>FrmMusteriBilgi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMusteriBorcDetay.resx">
+      <DependentUpon>FrmMusteriBorcDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMusteriDetayGoster.resx">
+      <DependentUpon>FrmMusteriDetayGoster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNakitKart.resx">
       <DependentUpon>FrmNakitKart.cs</DependentUpon>
@@ -310,6 +407,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="BarkodDbDataSet.xsc">
+      <DependentUpon>BarkodDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BarkodDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BarkodDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BarkodDbDataSet.xss">
+      <DependentUpon>BarkodDbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -373,6 +481,8 @@
     <None Include="Resources\delete.png" />
     <None Include="Resources\restore4854.png" />
     <None Include="Resources\scan-barcode-with-scanner-tool.png" />
+    <None Include="Resources\customer.png" />
+    <None Include="Resources\company.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

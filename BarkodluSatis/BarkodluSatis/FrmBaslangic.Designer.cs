@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBaslangic));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnMusteriler = new System.Windows.Forms.Button();
+            this.btnFirma = new System.Windows.Forms.Button();
             this.btnCikis = new System.Windows.Forms.Button();
             this.btnAyarlar = new System.Windows.Forms.Button();
             this.btnYedekleme = new System.Windows.Forms.Button();
@@ -50,6 +52,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.btnMusteriler, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnFirma, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnCikis, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnAyarlar, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnYedekleme, 2, 1);
@@ -61,12 +65,50 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSatisIslemi, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(56, 46);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 326);
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 335);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnMusteriler
+            // 
+            this.btnMusteriler.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnMusteriler.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMusteriler.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnMusteriler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMusteriler.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMusteriler.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMusteriler.Image = global::BarkodluSatis.Properties.Resources.customer;
+            this.btnMusteriler.Location = new System.Drawing.Point(3, 252);
+            this.btnMusteriler.Name = "btnMusteriler";
+            this.btnMusteriler.Size = new System.Drawing.Size(170, 80);
+            this.btnMusteriler.TabIndex = 17;
+            this.btnMusteriler.Text = "Müşteriler";
+            this.btnMusteriler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMusteriler.UseVisualStyleBackColor = false;
+            this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
+            // 
+            // btnFirma
+            // 
+            this.btnFirma.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnFirma.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFirma.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnFirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirma.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnFirma.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFirma.Image = global::BarkodluSatis.Properties.Resources.company;
+            this.btnFirma.Location = new System.Drawing.Point(179, 252);
+            this.btnFirma.Name = "btnFirma";
+            this.btnFirma.Size = new System.Drawing.Size(170, 80);
+            this.btnFirma.TabIndex = 16;
+            this.btnFirma.Text = "Firmalar";
+            this.btnFirma.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFirma.UseVisualStyleBackColor = false;
+            this.btnFirma.Click += new System.EventHandler(this.btnFirma_Click);
             // 
             // btnCikis
             // 
@@ -77,9 +119,9 @@
             this.btnCikis.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCikis.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCikis.Image = global::BarkodluSatis.Properties.Resources.exit4854;
-            this.btnCikis.Location = new System.Drawing.Point(355, 219);
+            this.btnCikis.Location = new System.Drawing.Point(355, 169);
             this.btnCikis.Name = "btnCikis";
-            this.btnCikis.Size = new System.Drawing.Size(170, 104);
+            this.btnCikis.Size = new System.Drawing.Size(170, 77);
             this.btnCikis.TabIndex = 12;
             this.btnCikis.Text = "Çıkış";
             this.btnCikis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -95,9 +137,9 @@
             this.btnAyarlar.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAyarlar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAyarlar.Image = global::BarkodluSatis.Properties.Resources.settings4854;
-            this.btnAyarlar.Location = new System.Drawing.Point(3, 219);
+            this.btnAyarlar.Location = new System.Drawing.Point(3, 169);
             this.btnAyarlar.Name = "btnAyarlar";
-            this.btnAyarlar.Size = new System.Drawing.Size(170, 104);
+            this.btnAyarlar.Size = new System.Drawing.Size(170, 77);
             this.btnAyarlar.TabIndex = 11;
             this.btnAyarlar.Text = "Ayarlar";
             this.btnAyarlar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -113,9 +155,9 @@
             this.btnYedekleme.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnYedekleme.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnYedekleme.Image = global::BarkodluSatis.Properties.Resources.backup4854;
-            this.btnYedekleme.Location = new System.Drawing.Point(355, 111);
+            this.btnYedekleme.Location = new System.Drawing.Point(355, 86);
             this.btnYedekleme.Name = "btnYedekleme";
-            this.btnYedekleme.Size = new System.Drawing.Size(170, 102);
+            this.btnYedekleme.Size = new System.Drawing.Size(170, 77);
             this.btnYedekleme.TabIndex = 10;
             this.btnYedekleme.Text = "Yedekleme";
             this.btnYedekleme.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -131,9 +173,9 @@
             this.btnFiyatGüncelle.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnFiyatGüncelle.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnFiyatGüncelle.Image = global::BarkodluSatis.Properties.Resources.fiyatguncelletl4854;
-            this.btnFiyatGüncelle.Location = new System.Drawing.Point(179, 111);
+            this.btnFiyatGüncelle.Location = new System.Drawing.Point(179, 86);
             this.btnFiyatGüncelle.Name = "btnFiyatGüncelle";
-            this.btnFiyatGüncelle.Size = new System.Drawing.Size(170, 102);
+            this.btnFiyatGüncelle.Size = new System.Drawing.Size(170, 77);
             this.btnFiyatGüncelle.TabIndex = 9;
             this.btnFiyatGüncelle.Text = "Fiyat Güncelle";
             this.btnFiyatGüncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -149,9 +191,9 @@
             this.btnKullaniciDegistir.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnKullaniciDegistir.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnKullaniciDegistir.Image = global::BarkodluSatis.Properties.Resources.kullanicidegistir32;
-            this.btnKullaniciDegistir.Location = new System.Drawing.Point(179, 219);
+            this.btnKullaniciDegistir.Location = new System.Drawing.Point(179, 169);
             this.btnKullaniciDegistir.Name = "btnKullaniciDegistir";
-            this.btnKullaniciDegistir.Size = new System.Drawing.Size(170, 104);
+            this.btnKullaniciDegistir.Size = new System.Drawing.Size(170, 77);
             this.btnKullaniciDegistir.TabIndex = 7;
             this.btnKullaniciDegistir.Text = "Kullanıcı Değiştir";
             this.btnKullaniciDegistir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -167,9 +209,9 @@
             this.btnUrunGiris.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUrunGiris.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUrunGiris.Image = global::BarkodluSatis.Properties.Resources.urungiris4854;
-            this.btnUrunGiris.Location = new System.Drawing.Point(3, 111);
+            this.btnUrunGiris.Location = new System.Drawing.Point(3, 86);
             this.btnUrunGiris.Name = "btnUrunGiris";
-            this.btnUrunGiris.Size = new System.Drawing.Size(170, 102);
+            this.btnUrunGiris.Size = new System.Drawing.Size(170, 77);
             this.btnUrunGiris.TabIndex = 3;
             this.btnUrunGiris.Text = "Ürün Giriş";
             this.btnUrunGiris.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -187,7 +229,7 @@
             this.btnStokTakibi.Image = global::BarkodluSatis.Properties.Resources.stok4854;
             this.btnStokTakibi.Location = new System.Drawing.Point(355, 3);
             this.btnStokTakibi.Name = "btnStokTakibi";
-            this.btnStokTakibi.Size = new System.Drawing.Size(170, 102);
+            this.btnStokTakibi.Size = new System.Drawing.Size(170, 77);
             this.btnStokTakibi.TabIndex = 2;
             this.btnStokTakibi.Text = "Stok Takibi";
             this.btnStokTakibi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -205,7 +247,7 @@
             this.btnGenelRapor.Image = global::BarkodluSatis.Properties.Resources.rapor48541;
             this.btnGenelRapor.Location = new System.Drawing.Point(179, 3);
             this.btnGenelRapor.Name = "btnGenelRapor";
-            this.btnGenelRapor.Size = new System.Drawing.Size(170, 102);
+            this.btnGenelRapor.Size = new System.Drawing.Size(170, 77);
             this.btnGenelRapor.TabIndex = 1;
             this.btnGenelRapor.Text = " Genel Rapor";
             this.btnGenelRapor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -223,7 +265,7 @@
             this.btnSatisIslemi.Image = global::BarkodluSatis.Properties.Resources.tl4854;
             this.btnSatisIslemi.Location = new System.Drawing.Point(3, 3);
             this.btnSatisIslemi.Name = "btnSatisIslemi";
-            this.btnSatisIslemi.Size = new System.Drawing.Size(170, 102);
+            this.btnSatisIslemi.Size = new System.Drawing.Size(170, 77);
             this.btnSatisIslemi.TabIndex = 0;
             this.btnSatisIslemi.Text = "Satış İşlemi";
             this.btnSatisIslemi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -251,6 +293,7 @@
             this.lblIsYeri.Size = new System.Drawing.Size(61, 19);
             this.lblIsYeri.TabIndex = 2;
             this.lblIsYeri.Text = "Kullanici";
+            this.lblIsYeri.Visible = false;
             // 
             // FrmBaslangic
             // 
@@ -286,8 +329,10 @@
         public System.Windows.Forms.Button btnYedekleme;
         public System.Windows.Forms.Button btnFiyatGüncelle;
         public System.Windows.Forms.Button btnCikis;
-        public System.Windows.Forms.Button btnAyarlar;
         public System.Windows.Forms.Label lblKullanici;
         public System.Windows.Forms.Label lblIsYeri;
+        public System.Windows.Forms.Button btnMusteriler;
+        public System.Windows.Forms.Button btnFirma;
+        public System.Windows.Forms.Button btnAyarlar;
     }
 }

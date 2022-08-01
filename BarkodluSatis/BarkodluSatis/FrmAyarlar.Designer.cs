@@ -96,6 +96,8 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lStandart19 = new BarkodluSatis.lStandart();
             this.btnYedekten = new BarkodluSatis.bStandart();
+            this.chbFirma = new System.Windows.Forms.CheckBox();
+            this.chbMusteri = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -147,6 +149,8 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.splitContainer1.Panel1.Controls.Add(this.chbMusteri);
+            this.splitContainer1.Panel1.Controls.Add(this.chbFirma);
             this.splitContainer1.Panel1.Controls.Add(this.lblKullanici);
             this.splitContainer1.Panel1.Controls.Add(this.lblKullaniciId);
             this.splitContainer1.Panel1.Controls.Add(this.chbYedekleme);
@@ -208,7 +212,7 @@
             // 
             this.chbYedekleme.AutoSize = true;
             this.chbYedekleme.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chbYedekleme.Location = new System.Drawing.Point(537, 211);
+            this.chbYedekleme.Location = new System.Drawing.Point(608, 225);
             this.chbYedekleme.Name = "chbYedekleme";
             this.chbYedekleme.Size = new System.Drawing.Size(93, 23);
             this.chbYedekleme.TabIndex = 16;
@@ -219,7 +223,7 @@
             // 
             this.chbFiyatGuncelle.AutoSize = true;
             this.chbFiyatGuncelle.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chbFiyatGuncelle.Location = new System.Drawing.Point(413, 211);
+            this.chbFiyatGuncelle.Location = new System.Drawing.Point(367, 211);
             this.chbFiyatGuncelle.Name = "chbFiyatGuncelle";
             this.chbFiyatGuncelle.Size = new System.Drawing.Size(118, 23);
             this.chbFiyatGuncelle.TabIndex = 16;
@@ -230,7 +234,7 @@
             // 
             this.chbStok.AutoSize = true;
             this.chbStok.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chbStok.Location = new System.Drawing.Point(288, 211);
+            this.chbStok.Location = new System.Drawing.Point(242, 211);
             this.chbStok.Name = "chbStok";
             this.chbStok.Size = new System.Drawing.Size(57, 23);
             this.chbStok.TabIndex = 16;
@@ -241,7 +245,7 @@
             // 
             this.chbAyarlar.AutoSize = true;
             this.chbAyarlar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chbAyarlar.Location = new System.Drawing.Point(413, 240);
+            this.chbAyarlar.Location = new System.Drawing.Point(367, 240);
             this.chbAyarlar.Name = "chbAyarlar";
             this.chbAyarlar.Size = new System.Drawing.Size(75, 23);
             this.chbAyarlar.TabIndex = 16;
@@ -252,7 +256,7 @@
             // 
             this.chbUrunGiris.AutoSize = true;
             this.chbUrunGiris.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chbUrunGiris.Location = new System.Drawing.Point(288, 240);
+            this.chbUrunGiris.Location = new System.Drawing.Point(242, 240);
             this.chbUrunGiris.Name = "chbUrunGiris";
             this.chbUrunGiris.Size = new System.Drawing.Size(93, 23);
             this.chbUrunGiris.TabIndex = 16;
@@ -263,7 +267,7 @@
             // 
             this.chbRapor.AutoSize = true;
             this.chbRapor.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chbRapor.Location = new System.Drawing.Point(158, 240);
+            this.chbRapor.Location = new System.Drawing.Point(112, 240);
             this.chbRapor.Name = "chbRapor";
             this.chbRapor.Size = new System.Drawing.Size(108, 23);
             this.chbRapor.TabIndex = 16;
@@ -274,7 +278,7 @@
             // 
             this.chbSatis.AutoSize = true;
             this.chbSatis.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chbSatis.Location = new System.Drawing.Point(158, 211);
+            this.chbSatis.Location = new System.Drawing.Point(112, 211);
             this.chbSatis.Name = "chbSatis";
             this.chbSatis.Size = new System.Drawing.Size(105, 23);
             this.chbSatis.TabIndex = 16;
@@ -286,7 +290,7 @@
             this.lStandart8.AutoSize = true;
             this.lStandart8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lStandart8.ForeColor = System.Drawing.Color.Navy;
-            this.lStandart8.Location = new System.Drawing.Point(50, 230);
+            this.lStandart8.Location = new System.Drawing.Point(5, 228);
             this.lStandart8.Name = "lStandart8";
             this.lStandart8.Size = new System.Drawing.Size(87, 20);
             this.lStandart8.TabIndex = 15;
@@ -524,6 +528,7 @@
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
             this.silToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // tabPage2
             // 
@@ -937,6 +942,28 @@
             this.btnYedekten.UseVisualStyleBackColor = false;
             this.btnYedekten.Click += new System.EventHandler(this.btnYedekten_Click);
             // 
+            // chbFirma
+            // 
+            this.chbFirma.AutoSize = true;
+            this.chbFirma.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chbFirma.Location = new System.Drawing.Point(491, 240);
+            this.chbFirma.Name = "chbFirma";
+            this.chbFirma.Size = new System.Drawing.Size(63, 23);
+            this.chbFirma.TabIndex = 19;
+            this.chbFirma.Text = "Firma";
+            this.chbFirma.UseVisualStyleBackColor = true;
+            // 
+            // chbMusteri
+            // 
+            this.chbMusteri.AutoSize = true;
+            this.chbMusteri.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chbMusteri.Location = new System.Drawing.Point(491, 211);
+            this.chbMusteri.Name = "chbMusteri";
+            this.chbMusteri.Size = new System.Drawing.Size(75, 23);
+            this.chbMusteri.TabIndex = 20;
+            this.chbMusteri.Text = "Müşteri";
+            this.chbMusteri.UseVisualStyleBackColor = true;
+            // 
             // FrmAyarlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1039,5 +1066,7 @@
         private bStandart btnYedekten;
         private lStandart lStandart19;
         internal lStandart lblKullanici;
+        private System.Windows.Forms.CheckBox chbMusteri;
+        private System.Windows.Forms.CheckBox chbFirma;
     }
 }

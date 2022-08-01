@@ -148,7 +148,7 @@
             this.btnBarkod = new System.Windows.Forms.Button();
             this.btnIade = new System.Windows.Forms.Button();
             this.btnOdenen = new System.Windows.Forms.Button();
-            this.button51 = new System.Windows.Forms.Button();
+            this.btnVeresiye = new System.Windows.Forms.Button();
             this.btnAdet = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -1692,7 +1692,7 @@
             this.tableLayoutPanel9.Controls.Add(this.btnBarkod, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.btnIade, 1, 1);
             this.tableLayoutPanel9.Controls.Add(this.btnOdenen, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.button51, 1, 2);
+            this.tableLayoutPanel9.Controls.Add(this.btnVeresiye, 1, 2);
             this.tableLayoutPanel9.Controls.Add(this.btnAdet, 0, 3);
             this.tableLayoutPanel9.Controls.Add(this.btnTemizle, 1, 3);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1787,20 +1787,21 @@
             this.btnOdenen.UseVisualStyleBackColor = false;
             this.btnOdenen.Click += new System.EventHandler(this.btnOdenen_Click);
             // 
-            // button51
+            // btnVeresiye
             // 
-            this.button51.BackColor = System.Drawing.Color.Gray;
-            this.button51.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button51.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.button51.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button51.ForeColor = System.Drawing.Color.White;
-            this.button51.Location = new System.Drawing.Point(82, 101);
-            this.button51.Margin = new System.Windows.Forms.Padding(1);
-            this.button51.Name = "button51";
-            this.button51.Size = new System.Drawing.Size(79, 48);
-            this.button51.TabIndex = 5;
-            this.button51.Text = "Fiş Yazdır";
-            this.button51.UseVisualStyleBackColor = false;
+            this.btnVeresiye.BackColor = System.Drawing.Color.Gray;
+            this.btnVeresiye.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVeresiye.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnVeresiye.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVeresiye.ForeColor = System.Drawing.Color.White;
+            this.btnVeresiye.Location = new System.Drawing.Point(82, 101);
+            this.btnVeresiye.Margin = new System.Windows.Forms.Padding(1);
+            this.btnVeresiye.Name = "btnVeresiye";
+            this.btnVeresiye.Size = new System.Drawing.Size(79, 48);
+            this.btnVeresiye.TabIndex = 5;
+            this.btnVeresiye.Text = "Veresiye";
+            this.btnVeresiye.UseVisualStyleBackColor = false;
+            this.btnVeresiye.Click += new System.EventHandler(this.btnVeresiye_Click);
             // 
             // btnAdet
             // 
@@ -1958,7 +1959,7 @@
         private System.Windows.Forms.Button btnBarkod;
         private System.Windows.Forms.Button btnIade;
         private System.Windows.Forms.Button btnOdenen;
-        private System.Windows.Forms.Button button51;
+        private System.Windows.Forms.Button btnVeresiye;
         private System.Windows.Forms.Button btnAdet;
         private System.Windows.Forms.Button btnTemizle;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;

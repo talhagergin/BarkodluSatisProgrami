@@ -220,14 +220,14 @@
         private lStandart lblGelirGider;
         private lStandart lStandart2;
         private System.Windows.Forms.ComboBox cmbOdemeTuru;
-        private tNumeric txtNakit;
-        private tNumeric txtkart;
         private lStandart lStandart3;
         private lStandart lStandart4;
-        private tStandart txtAciklama;
         private lStandart lStandart5;
         private System.Windows.Forms.DateTimePicker dtTarih;
         private lStandart lStandart6;
         private bStandart bStandart1;
+        internal tNumeric txtNakit;
+        internal tNumeric txtkart;
+        internal tStandart txtAciklama;
     }
 }

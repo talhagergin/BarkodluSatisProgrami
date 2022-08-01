@@ -102,15 +102,13 @@ namespace BarkodluSatis
                     urun.Tarih = DateTime.Now;
                     urun.Kullanici = lblKullanici.Text;
                     db.Urun.Add(urun);
-                    db.SaveChanges();
+                    db.SaveChanges();               
                     if(txtBakod.Text.Length==8)
                     {
                         var ozelbarkod = db.Barkod.First();
                         ozelbarkod.BarkodNo += 1;
                         db.SaveChanges();
                     }
-
-                    
 
                     dgwUrunler.DataSource = db.Urun.OrderByDescending(a => a.UrunId).Take(20).ToList();
                     Islemler.GridDuzenle(dgwUrunler);
@@ -124,7 +122,7 @@ namespace BarkodluSatis
                 txtBakod.Focus();
             }
         }
-
+        
         private void txtUrunAra_TextChanged(object sender, EventArgs e)
         {
             if(txtUrunAra.Text.Length>=2)
@@ -195,10 +193,6 @@ namespace BarkodluSatis
             txtUrunAd.Focus();
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {

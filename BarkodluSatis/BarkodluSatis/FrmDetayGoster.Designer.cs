@@ -68,9 +68,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgwListe);
-            this.splitContainer1.Size = new System.Drawing.Size(575, 295);
+            this.splitContainer1.Size = new System.Drawing.Size(732, 380);
             this.splitContainer1.SplitterDistance = 56;
-            this.splitContainer1.TabIndex = 2;
+            this.splitContainer1.TabIndex = 4;
             // 
             // dgwListe
             // 
@@ -111,18 +111,17 @@
             this.dgwListe.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgwListe.RowTemplate.Height = 32;
             this.dgwListe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgwListe.Size = new System.Drawing.Size(575, 235);
+            this.dgwListe.Size = new System.Drawing.Size(732, 320);
             this.dgwListe.TabIndex = 24;
             // 
             // FrmDetayGoster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 295);
+            this.ClientSize = new System.Drawing.Size(732, 380);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDetayGoster";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DETAY GÖSTER";
             this.Load += new System.EventHandler(this.FrmDetayGoster_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

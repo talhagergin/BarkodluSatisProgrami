@@ -84,5 +84,17 @@ namespace BarkodluSatis
             login.Show();
             this.Hide();
         }
+
+        private void btnMusteriler_Click(object sender, EventArgs e)
+        {
+            FrmMusteriBilgi musteri = new FrmMusteriBilgi();
+            musteri.ShowDialog();        
+        }
+
+        private void btnFirma_Click(object sender, EventArgs e)
+        {
+            FrmFirma f = new FrmFirma();
+            f.ShowDialog();
+        }
     }
 }

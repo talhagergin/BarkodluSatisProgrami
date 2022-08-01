@@ -533,11 +533,12 @@
             "Tümü",
             "Satışlar",
             "İade",
-            "Gelir(Satış Hariç)",
+            "Veresiye",
+            "Gelir (Satış Hariç)",
             "Gider (İade Hariç)"});
             this.lstFiltreleme.Location = new System.Drawing.Point(12, 32);
             this.lstFiltreleme.Name = "lstFiltreleme";
-            this.lstFiltreleme.Size = new System.Drawing.Size(149, 115);
+            this.lstFiltreleme.Size = new System.Drawing.Size(149, 138);
             this.lstFiltreleme.TabIndex = 1;
             // 
             // lStandart1

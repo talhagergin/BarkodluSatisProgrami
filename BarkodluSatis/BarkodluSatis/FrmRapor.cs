@@ -62,12 +62,17 @@ namespace BarkodluSatis
                     db.IslemOzet.Where(x => x.Tarih >= baslangic && x.Tarih <= bitis && x.Iade == true).Load();
                     dgwListe.DataSource = db.IslemOzet.Local.ToBindingList();
                 }
-                else if (lstFiltreleme.SelectedIndex == 3) //gelirler
+                else if(lstFiltreleme.SelectedIndex==3)
+                {
+                    db.IslemOzet.Where(x => x.Tarih >= baslangic && x.Tarih <= bitis && x.OdemeSekli == "Veresiye").Load();
+                    dgwListe.DataSource = db.IslemOzet.Local.ToBindingList();
+                }
+                else if (lstFiltreleme.SelectedIndex == 4) //gelirler
                 {
                     db.IslemOzet.Where(x => x.Tarih >= baslangic && x.Tarih <= bitis && x.Gelir == true).Load();
                     dgwListe.DataSource = db.IslemOzet.Local.ToBindingList();
                 }
-                else if (lstFiltreleme.SelectedIndex == 4) //giderler
+                else if (lstFiltreleme.SelectedIndex == 5) //giderler
                 {
                     db.IslemOzet.Where(x => x.Tarih >= baslangic && x.Tarih <= bitis && x.Gider == true).Load();
                     dgwListe.DataSource = db.IslemOzet.Local.ToBindingList();

@@ -243,14 +243,14 @@ namespace BarkodluSatis
 
         private void btnOnEkKaydet_Click(object sender, EventArgs e)
         {
-            if(txtOnEk.Text!="")
+            if (txtOnEk.Text != "")
             {
                 int onek = Convert.ToInt16(txtOnEk.Text);
-                using (var db=new BarkodDbEntities())
+                using (var db = new BarkodDbEntities())
                 {
-                    if(db.Terazi.Any(x=>x.TeraziOnEk==onek))
+                    if (db.Terazi.Any(x => x.TeraziOnEk == onek))
                     {
-                        MessageBox.Show(onek.ToString() + " ön ek zaten kayıtlı"); 
+                        MessageBox.Show(onek.ToString() + " ön ek zaten kayıtlı");
                     }
                     else
                     {
@@ -274,13 +274,13 @@ namespace BarkodluSatis
 
         private void btnOnEkSil_Click(object sender, EventArgs e)
         {
-            if(cmbOnEk.Text!="")
+            if (cmbOnEk.Text != "")
             {
                 int onekid = Convert.ToInt16(cmbOnEk.SelectedValue);
                 DialogResult onay = MessageBox.Show(cmbOnEk.Text + " ön eki silmek istiyor musunuz?", "Terazi Önek Silme İşlemi", MessageBoxButtons.YesNo);
-                if(onay==DialogResult.Yes)
+                if (onay == DialogResult.Yes)
                 {
-                    using (var db=new BarkodDbEntities())
+                    using (var db = new BarkodDbEntities())
                     {
                         var onek = db.Terazi.Find(onekid);
                         db.Terazi.Remove(onek);
@@ -301,9 +301,9 @@ namespace BarkodluSatis
 
         private void btnIsyeriKaydet_Click(object sender, EventArgs e)
         {
-            if(txtisyeriAdsoyad.Text!="" && txtisyeriunvan.Text!=""&& txtisyeriAdres.Text!="" && txtisyeriTelefon.Text!="")
+            if (txtisyeriAdsoyad.Text != "" && txtisyeriunvan.Text != "" && txtisyeriAdres.Text != "" && txtisyeriTelefon.Text != "")
             {
-                using (var db=new BarkodDbEntities())
+                using (var db = new BarkodDbEntities())
                 {
                     var isyeri = db.Sabit.FirstOrDefault();
                     isyeri.AdSoyad = txtisyeriAdsoyad.Text;
@@ -330,13 +330,33 @@ namespace BarkodluSatis
 
         private void btnTemizle_Click(object sender, EventArgs e) // duruma göre bunu silebilirim
         {
-            Temizle();           
+            Temizle();
         }
 
         private void btnYedekten_Click(object sender, EventArgs e)
         {
             Process.Start(Application.StartupPath + @"\ProgramRestore.exe");
             Application.Exit();
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int kullaniciid = Convert.ToInt32(dgwListeKullanici.CurrentRow.Cells["Id"].Value.ToString());
+            string kullaniciad = dgwListeKullanici.CurrentRow.Cells["AdSoyad"].Value.ToString();
+            DialogResult onay = MessageBox.Show(kullaniciad + " kullanıcıyı silmek istiyor musunuz ?", "Kullanıcı Silme İşlemi", MessageBoxButtons.YesNo);
+            if (onay == DialogResult.Yes)
+            {
+                using (var db = new BarkodDbEntities())
+                {
+                    var urun = db.Kullanici.Find(kullaniciid);
+                    db.Kullanici.Remove(urun);
+                    db.SaveChanges();
+                    MessageBox.Show("Kullanıcı silinmiştir");
+                    dgwListeKullanici.DataSource = db.Kullanici.OrderByDescending(a => a.Id).Take(20).ToList();
+                    Islemler.GridDuzenle(dgwListeKullanici);
+                    Temizle();
+                }
+            }
         }
     }
 }

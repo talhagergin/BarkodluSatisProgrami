@@ -36,5 +36,13 @@ namespace BarkodluSatis
         public virtual DbSet<StokHareket> StokHareket { get; set; }
         public virtual DbSet<Sabit> Sabit { get; set; }
         public virtual DbSet<Kullanici> Kullanici { get; set; }
+        public virtual DbSet<Guvenlik> Guvenlik { get; set; }
+        public virtual DbSet<MusteriNumara> MusteriNumara { get; set; }
+        public virtual DbSet<MusteriBorcTakip> MusteriBorcTakip { get; set; }
+        public virtual DbSet<BorcOzet> BorcOzet { get; set; }
+        public virtual DbSet<FirmaBilgi> FirmaBilgi { get; set; }
+        public virtual DbSet<FirmaBorc> FirmaBorc { get; set; }
+        public virtual DbSet<FirmaBorcNo> FirmaBorcNo { get; set; }
+        public virtual DbSet<MusteriVeIslemNo> MusteriVeIslemNo { get; set; }
     }
 }

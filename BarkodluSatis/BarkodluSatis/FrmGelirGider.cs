@@ -18,11 +18,13 @@ namespace BarkodluSatis
         }
         public string gelirgider { get; set; }
         public string kullanici { get; set; }
+        public string aciklama { get; set; }
         private void FrmGelirGider_Load(object sender, EventArgs e)
         {
             lblGelirGider.Text = gelirgider + " İŞLEMİ YAPILIYOR ";
         }
-
+        public double tutar { get; set; }
+        public double tutar2 { get; set; }
         private void cmbOdemeTuru_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cmbOdemeTuru.SelectedIndex==0)
@@ -43,7 +45,6 @@ namespace BarkodluSatis
             txtNakit.Text = "0";
             txtkart.Text = "0";
         }
-
         private void bStandart1_Click(object sender, EventArgs e)
         {
             if(cmbOdemeTuru.Text!="")
@@ -58,26 +59,33 @@ namespace BarkodluSatis
                         io.OdemeSekli = cmbOdemeTuru.Text;
                         io.Nakit = Islemler.DoubleYap(txtNakit.Text); 
                         io.Kart = Islemler.DoubleYap(txtkart.Text);
-                        if(gelirgider=="GELİR")
+                        
+                        io.AlisFiyatToplam = 0;
+                        io.Aciklama = gelirgider + "- İşlemi " + txtAciklama.Text;
+                        io.Tarih = dtTarih.Value;
+                        io.Kullanici = kullanici;
+                        if (gelirgider == "GELİR")
                         {
                             io.Gelir = true;
                             io.Gider = false;
+                            if (txtNakit.Text != "") { tutar = Islemler.DoubleYap(txtNakit.Text); }
+                            if (txtkart.Text != "") { tutar2 = Islemler.DoubleYap(txtkart.Text); }
                         }
                         else
                         {
-
                             io.Gelir = false;
                             io.Gider = true;
                             io.Nakit = io.Nakit * -1;
                             io.Kart = io.Kart * -1;
                             io.AlisFiyatToplam = io.AlisFiyatToplam * -1;
+                            if (txtNakit.Text != "") { tutar = Islemler.DoubleYap(txtNakit.Text); }
+                            if (txtkart.Text != "") { tutar2 = Islemler.DoubleYap(txtkart.Text); }
                         }
-                        io.AlisFiyatToplam = 0;
-                        io.Aciklama = gelirgider + "- İşlemi " + txtAciklama.Text;
-                        io.Tarih = dtTarih.Value;
-                        io.Kullanici = kullanici;
                         db.IslemOzet.Add(io); ;
                         db.SaveChanges();
+                        
+                        
+                        aciklama = txtAciklama.Text;
                         MessageBox.Show(gelirgider + " işlemi kaydedildi ");
                         txtNakit.Text = "0";
                         txtkart.Text = "0";

@@ -53,8 +53,8 @@ namespace BarkodluSatis
                 StringFormat ortala = new StringFormat(StringFormatFlags.FitBlackBox);
                 ortala.Alignment = StringAlignment.Center;
                 RectangleF rcUnvanKonum = new RectangleF(0, 20, 220, 20);
-                e.Graphics.DrawString(isyeri.Unvan, fontBaslik, Brushes.Black,rcUnvanKonum,ortala);
-                e.Graphics.DrawString("Telefon :" + isyeri.Telefon, fontBilgi, Brushes.Black, new Point(5, 45));
+                e.Graphics.DrawString(isyeri.AdSoyad, fontBaslik, Brushes.Black,rcUnvanKonum,ortala);
+                e.Graphics.DrawString("Bizi Tercih Ettiğiniz İçin Teşekkürler..." ,fontBilgi, Brushes.Black, new Point(5, 45));
                 e.Graphics.DrawString("İşlem No :" + IslemNo.ToString(), fontBilgi, Brushes.Black, new Point(5, 60));
                 e.Graphics.DrawString("Tarih :" + DateTime.Now, fontBilgi, Brushes.Black, new Point(5, 75));
                 e.Graphics.DrawString("--------------------------------------------------", fontBilgi, Brushes.Black, new Point(5, 90));
@@ -68,6 +68,7 @@ namespace BarkodluSatis
                 double geneltoplam = 0;
                 foreach (var item  in liste)
                 {
+                    if (item.UrunAd.Length > 17) { item.UrunAd = item.UrunAd.Substring(0, 17); }
                     e.Graphics.DrawString(item.UrunAd, fontBilgi, Brushes.Black, new Point(5, yukseklik));
                     e.Graphics.DrawString(item.Miktar.ToString(), fontBilgi, Brushes.Black, new Point(110, yukseklik));
                     e.Graphics.DrawString(Convert.ToDouble(item.SatisFiyat).ToString("C2"), fontBilgi, Brushes.Black, new Point(140, yukseklik));

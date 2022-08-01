@@ -26,5 +26,6 @@ namespace BarkodluSatis
         public string Aciklama { get; set; }
         public Nullable<System.DateTime> Tarih { get; set; }
         public string Kullanici { get; set; }
+        public Nullable<double> Veresiye { get; set; }
     }
 }
