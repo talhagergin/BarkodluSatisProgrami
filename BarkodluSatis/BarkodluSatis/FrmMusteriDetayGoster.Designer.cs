@@ -35,15 +35,15 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblAd = new BarkodluSatis.lStandart();
             this.lblMusteriNo = new BarkodluSatis.lStandart();
-            this.dgwMusteri = new BarkodluSatis.gridOzel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.detayGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgwMusteri = new BarkodluSatis.gridOzel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgwMusteri)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwMusteri)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -89,6 +89,20 @@
             this.lblMusteriNo.TabIndex = 0;
             this.lblMusteriNo.Text = "lStandart1";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detayGösterToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(142, 26);
+            // 
+            // detayGösterToolStripMenuItem
+            // 
+            this.detayGösterToolStripMenuItem.Name = "detayGösterToolStripMenuItem";
+            this.detayGösterToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.detayGösterToolStripMenuItem.Text = "Detay Göster";
+            this.detayGösterToolStripMenuItem.Click += new System.EventHandler(this.detayGösterToolStripMenuItem_Click);
+            // 
             // dgwMusteri
             // 
             this.dgwMusteri.AllowUserToAddRows = false;
@@ -132,20 +146,6 @@
             this.dgwMusteri.Size = new System.Drawing.Size(800, 390);
             this.dgwMusteri.TabIndex = 23;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.detayGösterToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(142, 26);
-            // 
-            // detayGösterToolStripMenuItem
-            // 
-            this.detayGösterToolStripMenuItem.Name = "detayGösterToolStripMenuItem";
-            this.detayGösterToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.detayGösterToolStripMenuItem.Text = "Detay Göster";
-            this.detayGösterToolStripMenuItem.Click += new System.EventHandler(this.detayGösterToolStripMenuItem_Click);
-            // 
             // FrmMusteriDetayGoster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,8 +161,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgwMusteri)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgwMusteri)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -26,7 +26,7 @@ namespace BarkodluSatis
             lblAd.Text = " : " + ad;
             using (var db = new BarkodDbEntities())
             {
-                dgwMusteri.DataSource = db.BorcOzet.Select(x => new { x.MusteriNo,x.Ad,x.Odenen,x.Eklenen,x.Kalan,x.Tarih}).Where(x => x.MusteriNo == musterino).ToList();
+                dgwMusteri.DataSource = db.BorcOzet.Select(x => new { x.MusteriNo,x.Ad,x.Odenen,x.Eklenen,x.Kalan,x.Tarih}).Where(x => x.MusteriNo == musterino).OrderByDescending(x=>x.Tarih).ToList();
                 Islemler.GridDuzenle(dgwMusteri);
             }
         }
@@ -36,13 +36,23 @@ namespace BarkodluSatis
             {               
                 using (var db = new BarkodDbEntities())
                 {
-                    var islemno = db.MusteriVeIslemNo.Where(x => x.MusteriNo == musterino).FirstOrDefault().IslemNo;
-                    _islemno = islemno;
-                    if (musterino != 0)
+                    var islemnobul = db.MusteriVeIslemNo.Where(x => x.MusteriNo == musterino).ToArray();
+                    DateTime _tarihi = DateTime.Parse(dgwMusteri.CurrentRow.Cells["Tarih"].Value.ToString());
+                    var islemTuru = dgwMusteri.CurrentRow.Cells["Eklenen"].Value.ToString();
+                    if (islemTuru != "0")
                     {
-                    FrmDetayGoster f = new FrmDetayGoster();
-                    f.islemno = Convert.ToInt32(_islemno);
-                    f.ShowDialog();
+                        //_islemno = islemno;
+                        if (musterino != 0)
+                        {
+                            FrmMusteriBorcDetay f = new FrmMusteriBorcDetay();
+                            f.musterino = Convert.ToInt32(musterino);
+                            f._tarih = _tarihi;
+                            f.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ödeme işlemlerinin detayı bulunmaz.");
                     }
                 }
                 

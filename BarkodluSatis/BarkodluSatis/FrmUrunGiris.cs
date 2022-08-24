@@ -48,12 +48,16 @@ namespace BarkodluSatis
                 }
             }
         }
-
+        int firmaId;
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            if (!cbFirma.Checked)
+            {
+                FirmaGuncelle();
+            }
             if(txtBakod.Text!="" && txtUrunAd.Text!="" && cmbUrunGrup.Text!=""&& txtSatisFiyat.Text!=""&& txtAlisFiyat.Text!="" && txtMiktar.Text!=""&&txtKdvOrani.Text!="")
             {
-                if (db.Urun.Any(a => a.Barkod == txtBakod.Text))
+                if (db.Urun.Any(a => a.Barkod == txtBakod.Text))//Eğer ürün varsa güncelleme yapacak
                 {
                     var guncelle = db.Urun.Where(a => a.Barkod == txtBakod.Text).SingleOrDefault();
                     guncelle.UrunAd = txtUrunAd.Text;
@@ -71,14 +75,15 @@ namespace BarkodluSatis
                     else
                     {
                         guncelle.Birim = "Adet";
-                    }                    
-                    guncelle.Tarih = DateTime.Now;
+                    }
+                    var dateTime = DateTime.Now.GetRidOfSeconds();
+                    guncelle.Tarih = dateTime;
                     guncelle.Kullanici = lblKullanici.Text;
                     db.SaveChanges();
                     dgwUrunler.DataSource = db.Urun.OrderByDescending(a => a.UrunId).Take(10).ToList();
                     Islemler.GridDuzenle(dgwUrunler);
                 }
-                else
+                else//Ürün yoksa ekleme işlemi yapar
                 {
                     Urun urun = new Urun();
                     urun.Barkod = txtBakod.Text;
@@ -98,12 +103,18 @@ namespace BarkodluSatis
                     else
                     {
                         urun.Birim = "Adet";
-                    }                    
-                    urun.Tarih = DateTime.Now;
+                    }
+                    var dateTime = DateTime.Now.GetRidOfSeconds();
+                    urun.Tarih = dateTime;
                     urun.Kullanici = lblKullanici.Text;
                     db.Urun.Add(urun);
-                    db.SaveChanges();               
-                    if(txtBakod.Text.Length==8)
+                    db.SaveChanges();
+                    //Firma işlemleri
+                    if (!cbFirma.Checked)
+                    {
+                        FirmaGuncelle();
+                    }
+                    if (txtBakod.Text.Length==8)
                     {
                         var ozelbarkod = db.Barkod.First();
                         ozelbarkod.BarkodNo += 1;
@@ -114,6 +125,15 @@ namespace BarkodluSatis
                     Islemler.GridDuzenle(dgwUrunler);
                 }
                 Islemler.StokHareket(txtBakod.Text, txtUrunAd.Text, "Adet", Convert.ToDouble(txtMiktar.Text), cmbUrunGrup.Text, lblKullanici.Text);
+                if (!cbFirma.Checked) {
+                DialogResult onay = MessageBox.Show("Firma Ödeme Yapılacak Mı?","Firma Ödemesi", MessageBoxButtons.YesNo);
+                if(onay == DialogResult.Yes)
+                {
+                    FrmFirmaOdemeEkranı f = new FrmFirmaOdemeEkranı();
+                    f._firmaId = Convert.ToInt32(cmbFirma.SelectedValue);
+                    f.ShowDialog();
+                } }
+                
                 Temizle();
             }
             else
@@ -122,7 +142,35 @@ namespace BarkodluSatis
                 txtBakod.Focus();
             }
         }
-        
+        private void FirmaGuncelle()
+        {
+            FirmaBorc firma = new FirmaBorc();
+            firma.FirmaAd = cmbFirma.Text;
+            firma.UrunAd = txtUrunAd.Text;
+            firma.UrunGrup = cmbUrunGrup.Text;
+            firma.FirmaId = Convert.ToInt32(cmbFirma.SelectedValue);
+            firmaId = firma.FirmaId;
+            if (!cbUrunTipi.Checked)
+            {
+                firma.Birim = "Adet";
+            }
+            else { firma.Birim = "Kg"; }
+            firma.Miktar = Convert.ToInt32(txtMiktar.Text);
+            firma.Eklenen = Islemler.DoubleYap(txtAlisFiyat.Text) * Islemler.DoubleYap(txtMiktar.Text);
+            var datetime = DateTime.Now.GetRidOfSeconds();
+            firma.Tarih = datetime;
+            firma.Aciklama = txtAciklama.Text;
+            //firma borca ekleme yapılacak ama kayıt üstüne eklenmemesi lazım tekrar bakılacak buaraya gerekirse yeni tablo eklenebilir
+            db.FirmaBorc.Add(firma);
+            
+            db.SaveChanges();
+            //firma borc güncelleme işlemi
+            var guncelle = db.FirmaBilgi.Where(a => a.FirmaId == firmaId).FirstOrDefault();
+            guncelle.GenelBorc += Islemler.DoubleYap(txtAlisFiyat.Text) * Islemler.DoubleYap(txtMiktar.Text);
+            guncelle.Odenen+= Islemler.DoubleYap(txtAlisFiyat.Text) * Islemler.DoubleYap(txtMiktar.Text);
+            guncelle.Kalan -= Islemler.DoubleYap(txtAlisFiyat.Text) * Islemler.DoubleYap(txtMiktar.Text);
+            db.SaveChanges();
+        }
         private void txtUrunAra_TextChanged(object sender, EventArgs e)
         {
             if(txtUrunAra.Text.Length>=2)
@@ -153,11 +201,20 @@ namespace BarkodluSatis
 
         private void FrmUrunGiris_Load(object sender, EventArgs e)
         {
+            
+           /* MessageBox.Show(cmbFirma.SelectedValue.ToString());*///id gelipm gelmeme kontrolğne bakılacak
             txtUrunSayisi.Text = db.Urun.Count().ToString();
             dgwUrunler.DataSource = db.Urun.OrderByDescending(a => a.UrunId).Take(20).ToList();
             Islemler.GridDuzenle(dgwUrunler);
             GrupDoldur();
+            FirmaDoldur();
             txtBakod.Focus();
+        }
+        public void FirmaDoldur()
+        {
+            cmbFirma.DisplayMember = "FirmaAd";
+            cmbFirma.ValueMember = "FirmaId";
+            cmbFirma.DataSource = db.FirmaBilgi.OrderBy(x => x.FirmaAd).ToList();
         }
         public void GrupDoldur()
         {
@@ -282,6 +339,24 @@ namespace BarkodluSatis
         private void btnRaporAl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbFirma_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbFirma.Checked)
+            {
+                cbFirma.Text = "Ürün Düzenleme İşlemi";
+
+            }
+            else
+            {
+                cbFirma.Text = "Firma Ürün Alım İşlemi";
+            }
+        }
+
+        private void txtMiktar_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Lütfen eklemek istediğiniz miktarı giriniz!");
         }
     }
 }

@@ -41,10 +41,9 @@
         </EntityType>
         <EntityType Name="FirmaBorc">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="BorcId" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BorcNo" Type="int" />
+          <Property Name="BorcId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirmaId" Type="int" Nullable="false" />
           <Property Name="FirmaAd" Type="nvarchar" MaxLength="100" />
           <Property Name="UrunAd" Type="nvarchar" MaxLength="100" />
@@ -52,15 +51,22 @@
           <Property Name="Birim" Type="nvarchar" MaxLength="50" />
           <Property Name="Miktar" Type="float" />
           <Property Name="Tarih" Type="datetime" />
+          <Property Name="Eklenen" Type="float" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
           <Property Name="ToplamTutar" Type="float" />
-          <Property Name="Aciklama" Type="nvarchar" MaxLength="200" />
         </EntityType>
-        <EntityType Name="FirmaBorcNo">
+        <EntityType Name="FirmaOdenenDetay">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BorcnNo" Type="int" />
+          <Property Name="FirmaId" Type="int" Nullable="false" />
+          <Property Name="OdemeSekli" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nakit" Type="float" />
+          <Property Name="Kart" Type="float" />
+          <Property Name="ToplamTutar" Type="float" Nullable="false" />
+          <Property Name="Tarih" Type="datetime" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Guvenlik">
           <Key>
@@ -121,6 +127,8 @@
           <Property Name="Ayarlar" Type="bit" />
           <Property Name="FiyatGuncelle" Type="bit" />
           <Property Name="Yedekleme" Type="bit" />
+          <Property Name="Musteri" Type="bit" />
+          <Property Name="Firma" Type="bit" />
         </EntityType>
         <EntityType Name="MusteriBorcTakip">
           <Key>
@@ -236,7 +244,7 @@
           <EntitySet Name="BorcOzet" EntityType="Self.BorcOzet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FirmaBilgi" EntityType="Self.FirmaBilgi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FirmaBorc" EntityType="Self.FirmaBorc" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FirmaBorcNo" EntityType="Self.FirmaBorcNo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FirmaOdenenDetay" EntityType="Self.FirmaOdenenDetay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Guvenlik" EntityType="Self.Guvenlik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HizliUrun" EntityType="Self.HizliUrun" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Islem" EntityType="Self.Islem" Schema="dbo" store:Type="Tables" />
@@ -291,10 +299,10 @@
           <EntitySet Name="MusteriNumara" EntityType="BarkodDbModel.MusteriNumara" />
           <EntitySet Name="MusteriBorcTakip" EntityType="BarkodDbModel.MusteriBorcTakip" />
           <EntitySet Name="BorcOzet" EntityType="BarkodDbModel.BorcOzet" />
+          <EntitySet Name="MusteriVeIslemNo" EntityType="BarkodDbModel.MusteriVeIslemNo" />
           <EntitySet Name="FirmaBilgi" EntityType="BarkodDbModel.FirmaBilgi" />
           <EntitySet Name="FirmaBorc" EntityType="BarkodDbModel.FirmaBorc" />
-          <EntitySet Name="FirmaBorcNo" EntityType="BarkodDbModel.FirmaBorcNo" />
-          <EntitySet Name="MusteriVeIslemNo" EntityType="BarkodDbModel.MusteriVeIslemNo" />
+          <EntitySet Name="FirmaOdenenDetay" EntityType="BarkodDbModel.FirmaOdenenDetay" />
         </EntityContainer>
         <EntityType Name="Terazi">
           <Key>
@@ -414,6 +422,8 @@
           <Property Name="Ayarlar" Type="Boolean" />
           <Property Name="FiyatGuncelle" Type="Boolean" />
           <Property Name="Yedekleme" Type="Boolean" />
+          <Property Name="Musteri" Type="Boolean" />
+          <Property Name="Firma" Type="Boolean" />
         </EntityType>
         <EntityType Name="Guvenlik">
           <Key>
@@ -458,6 +468,14 @@
           <Property Name="Tarih" Type="DateTime" Precision="3" />
           <Property Name="Eklenen" Type="Double" />
         </EntityType>
+        <EntityType Name="MusteriVeIslemNo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IslemNo" Type="Int32" />
+          <Property Name="MusteriNo" Type="Int32" />
+        </EntityType>
         <EntityType Name="FirmaBilgi">
           <Key>
             <PropertyRef Name="FirmaId" />
@@ -474,9 +492,9 @@
         </EntityType>
         <EntityType Name="FirmaBorc">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="BorcId" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BorcId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirmaId" Type="Int32" Nullable="false" />
           <Property Name="FirmaAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="UrunAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -484,24 +502,22 @@
           <Property Name="Birim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Miktar" Type="Double" />
           <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Eklenen" Type="Double" />
+          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="ToplamTutar" Type="Double" />
-          <Property Name="BorcNo" Type="Int32" />
-          <Property Name="Aciklama" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="FirmaBorcNo">
+        <EntityType Name="FirmaOdenenDetay">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BorcnNo" Type="Int32" />
-        </EntityType>
-        <EntityType Name="MusteriVeIslemNo">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IslemNo" Type="Int32" />
-          <Property Name="MusteriNo" Type="Int32" />
+          <Property Name="FirmaId" Type="Int32" Nullable="false" />
+          <Property Name="OdemeSekli" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nakit" Type="Double" />
+          <Property Name="Kart" Type="Double" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ToplamTutar" Type="Double" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -642,6 +658,8 @@
           <EntitySetMapping Name="Kullanici">
             <EntityTypeMapping TypeName="BarkodDbModel.Kullanici">
               <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="Firma" ColumnName="Firma" />
+                <ScalarProperty Name="Musteri" ColumnName="Musteri" />
                 <ScalarProperty Name="Yedekleme" ColumnName="Yedekleme" />
                 <ScalarProperty Name="FiyatGuncelle" ColumnName="FiyatGuncelle" />
                 <ScalarProperty Name="Ayarlar" ColumnName="Ayarlar" />
@@ -705,6 +723,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="MusteriVeIslemNo">
+            <EntityTypeMapping TypeName="BarkodDbModel.MusteriVeIslemNo">
+              <MappingFragment StoreEntitySet="MusteriVeIslemNo">
+                <ScalarProperty Name="MusteriNo" ColumnName="MusteriNo" />
+                <ScalarProperty Name="IslemNo" ColumnName="IslemNo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="FirmaBilgi">
             <EntityTypeMapping TypeName="BarkodDbModel.FirmaBilgi">
               <MappingFragment StoreEntitySet="FirmaBilgi">
@@ -723,9 +750,9 @@
           <EntitySetMapping Name="FirmaBorc">
             <EntityTypeMapping TypeName="BarkodDbModel.FirmaBorc">
               <MappingFragment StoreEntitySet="FirmaBorc">
-                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
-                <ScalarProperty Name="BorcNo" ColumnName="BorcNo" />
                 <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Eklenen" ColumnName="Eklenen" />
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="Miktar" ColumnName="Miktar" />
                 <ScalarProperty Name="Birim" ColumnName="Birim" />
@@ -733,23 +760,20 @@
                 <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
                 <ScalarProperty Name="FirmaAd" ColumnName="FirmaAd" />
                 <ScalarProperty Name="FirmaId" ColumnName="FirmaId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BorcId" ColumnName="BorcId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FirmaBorcNo">
-            <EntityTypeMapping TypeName="BarkodDbModel.FirmaBorcNo">
-              <MappingFragment StoreEntitySet="FirmaBorcNo">
-                <ScalarProperty Name="BorcnNo" ColumnName="BorcnNo" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MusteriVeIslemNo">
-            <EntityTypeMapping TypeName="BarkodDbModel.MusteriVeIslemNo">
-              <MappingFragment StoreEntitySet="MusteriVeIslemNo">
-                <ScalarProperty Name="MusteriNo" ColumnName="MusteriNo" />
-                <ScalarProperty Name="IslemNo" ColumnName="IslemNo" />
+          <EntitySetMapping Name="FirmaOdenenDetay">
+            <EntityTypeMapping TypeName="BarkodDbModel.FirmaOdenenDetay">
+              <MappingFragment StoreEntitySet="FirmaOdenenDetay">
+                <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Kart" ColumnName="Kart" />
+                <ScalarProperty Name="Nakit" ColumnName="Nakit" />
+                <ScalarProperty Name="OdemeSekli" ColumnName="OdemeSekli" />
+                <ScalarProperty Name="FirmaId" ColumnName="FirmaId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

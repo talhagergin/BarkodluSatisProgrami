@@ -118,7 +118,7 @@
     <Compile Include="FirmaBorc.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="FirmaBorcNo.cs">
+    <Compile Include="FirmaOdenenDetay.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="FrmAyarlar.cs">
@@ -132,12 +132,6 @@
     </Compile>
     <Compile Include="FrmBaslangic.Designer.cs">
       <DependentUpon>FrmBaslangic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmBorcOdeme.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBorcOdeme.Designer.cs">
-      <DependentUpon>FrmBorcOdeme.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDetayGoster.cs">
       <SubType>Form</SubType>
@@ -156,6 +150,12 @@
     </Compile>
     <Compile Include="FrmFirmaBorcDetay.Designer.cs">
       <DependentUpon>FrmFirmaBorcDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFirmaOdemeEkranı.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFirmaOdemeEkranı.Designer.cs">
+      <DependentUpon>FrmFirmaOdemeEkranı.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmFiyatGuncelle.cs">
       <SubType>Form</SubType>
@@ -210,6 +210,12 @@
     </Compile>
     <Compile Include="FrmMusteriDetayGoster.Designer.cs">
       <DependentUpon>FrmMusteriDetayGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMusteriOdemeAlma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMusteriOdemeAlma.Designer.cs">
+      <DependentUpon>FrmMusteriOdemeAlma.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNakitKart.cs">
       <SubType>Form</SubType>
@@ -324,9 +330,6 @@
     <EmbeddedResource Include="FrmBaslangic.resx">
       <DependentUpon>FrmBaslangic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBorcOdeme.resx">
-      <DependentUpon>FrmBorcOdeme.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmDetayGoster.resx">
       <DependentUpon>FrmDetayGoster.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFirmaBorcDetay.resx">
       <DependentUpon>FrmFirmaBorcDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFirmaOdemeEkranı.resx">
+      <DependentUpon>FrmFirmaOdemeEkranı.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFiyatGuncelle.resx">
       <DependentUpon>FrmFiyatGuncelle.cs</DependentUpon>
@@ -362,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMusteriDetayGoster.resx">
       <DependentUpon>FrmMusteriDetayGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMusteriOdemeAlma.resx">
+      <DependentUpon>FrmMusteriOdemeAlma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNakitKart.resx">
       <DependentUpon>FrmNakitKart.cs</DependentUpon>

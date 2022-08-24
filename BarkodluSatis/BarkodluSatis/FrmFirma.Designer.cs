@@ -35,14 +35,14 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detayGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtOdenen = new System.Windows.Forms.TextBox();
             this.txtGenelBorc = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txtAciklama = new System.Windows.Forms.RichTextBox();
-            this.detayGösterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtTelefon = new System.Windows.Forms.MaskedTextBox();
             this.btnOdeme = new System.Windows.Forms.Button();
-            this.btnBorcEkle = new System.Windows.Forms.Button();
             this.lblKullaniciId = new BarkodluSatis.lStandart();
+            this.txtAciklama = new System.Windows.Forms.RichTextBox();
             this.lStandart4 = new BarkodluSatis.lStandart();
             this.lStandart1 = new BarkodluSatis.lStandart();
             this.txtFirmaAd = new BarkodluSatis.tStandart();
@@ -65,7 +65,6 @@
             this.lStandart3 = new BarkodluSatis.lStandart();
             this.lStandart2 = new BarkodluSatis.lStandart();
             this.dgwFirma = new BarkodluSatis.gridOzel();
-            this.txtTelefon = new System.Windows.Forms.MaskedTextBox();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -96,6 +95,13 @@
             this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.düzenleToolStripMenuItem.Text = "Düzenle";
             this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.düzenleToolStripMenuItem_Click);
+            // 
+            // detayGösterToolStripMenuItem
+            // 
+            this.detayGösterToolStripMenuItem.Name = "detayGösterToolStripMenuItem";
+            this.detayGösterToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.detayGösterToolStripMenuItem.Text = "Detay Göster";
+            this.detayGösterToolStripMenuItem.Click += new System.EventHandler(this.detayGösterToolStripMenuItem_Click);
             // 
             // txtOdenen
             // 
@@ -131,7 +137,6 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.txtTelefon);
             this.splitContainer1.Panel1.Controls.Add(this.btnOdeme);
-            this.splitContainer1.Panel1.Controls.Add(this.btnBorcEkle);
             this.splitContainer1.Panel1.Controls.Add(this.lblKullaniciId);
             this.splitContainer1.Panel1.Controls.Add(this.txtAciklama);
             this.splitContainer1.Panel1.Controls.Add(this.lStandart4);
@@ -165,20 +170,13 @@
             this.splitContainer1.SplitterDistance = 247;
             this.splitContainer1.TabIndex = 1;
             // 
-            // txtAciklama
+            // txtTelefon
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(440, 128);
-            this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(249, 61);
-            this.txtAciklama.TabIndex = 4;
-            this.txtAciklama.Text = "";
-            // 
-            // detayGösterToolStripMenuItem
-            // 
-            this.detayGösterToolStripMenuItem.Name = "detayGösterToolStripMenuItem";
-            this.detayGösterToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.detayGösterToolStripMenuItem.Text = "Detay Göster";
-            this.detayGösterToolStripMenuItem.Click += new System.EventHandler(this.detayGösterToolStripMenuItem_Click);
+            this.txtTelefon.Location = new System.Drawing.Point(110, 154);
+            this.txtTelefon.Mask = "(999) 000-0000";
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.Size = new System.Drawing.Size(226, 20);
+            this.txtTelefon.TabIndex = 3;
             // 
             // btnOdeme
             // 
@@ -197,23 +195,6 @@
             this.btnOdeme.UseVisualStyleBackColor = false;
             this.btnOdeme.Click += new System.EventHandler(this.btnOdeme_Click);
             // 
-            // btnBorcEkle
-            // 
-            this.btnBorcEkle.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnBorcEkle.FlatAppearance.BorderColor = System.Drawing.Color.YellowGreen;
-            this.btnBorcEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorcEkle.Font = new System.Drawing.Font("Eras Medium ITC", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorcEkle.ForeColor = System.Drawing.Color.White;
-            this.btnBorcEkle.Image = global::BarkodluSatis.Properties.Resources.Ekle20;
-            this.btnBorcEkle.Location = new System.Drawing.Point(624, 32);
-            this.btnBorcEkle.Name = "btnBorcEkle";
-            this.btnBorcEkle.Size = new System.Drawing.Size(99, 26);
-            this.btnBorcEkle.TabIndex = 33;
-            this.btnBorcEkle.Text = "Borç Ekle";
-            this.btnBorcEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBorcEkle.UseVisualStyleBackColor = false;
-            this.btnBorcEkle.Click += new System.EventHandler(this.btnBorcEkle_Click);
-            // 
             // lblKullaniciId
             // 
             this.lblKullaniciId.AutoSize = true;
@@ -225,6 +206,14 @@
             this.lblKullaniciId.TabIndex = 32;
             this.lblKullaniciId.Text = "lStandart9";
             this.lblKullaniciId.Visible = false;
+            // 
+            // txtAciklama
+            // 
+            this.txtAciklama.Location = new System.Drawing.Point(440, 128);
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(249, 61);
+            this.txtAciklama.TabIndex = 4;
+            this.txtAciklama.Text = "";
             // 
             // lStandart4
             // 
@@ -524,14 +513,6 @@
             this.dgwFirma.Size = new System.Drawing.Size(983, 348);
             this.dgwFirma.TabIndex = 20;
             // 
-            // txtTelefon
-            // 
-            this.txtTelefon.Location = new System.Drawing.Point(110, 154);
-            this.txtTelefon.Mask = "(999) 000-0000";
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(226, 20);
-            this.txtTelefon.TabIndex = 3;
-            // 
             // FrmFirma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,7 +567,6 @@
         private System.Windows.Forms.RichTextBox txtAciklama;
         private lStandart lStandart4;
         private lStandart lblKullaniciId;
-        private System.Windows.Forms.Button btnBorcEkle;
         private System.Windows.Forms.Button btnOdeme;
         private System.Windows.Forms.ToolStripMenuItem detayGösterToolStripMenuItem;
         private System.Windows.Forms.MaskedTextBox txtTelefon;

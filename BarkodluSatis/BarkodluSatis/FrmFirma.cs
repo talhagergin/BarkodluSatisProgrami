@@ -189,20 +189,20 @@ namespace BarkodluSatis
                     guncelle.Odenen = Islemler.DoubleYap(txtOdenen.Text);
                     db.SaveChanges();
                     MessageBox.Show("Güncelleme yapılmıştır");
-                    int? borcnNo = db.FirmaBorcNo.First().BorcnNo;
-                    FirmaBorc firma = new FirmaBorc();
-                    firma.BorcNo = borcnNo;
-                    firma.FirmaId = guncelle.FirmaId;
-                    firma.FirmaAd = txtFirmaAd.Text;
-                    firma.Tarih = DateTime.Now;
-                    firma.Aciklama = aciklama;
-                    firma.ToplamTutar = odeme;
+                    //int? borcnNo = db.FirmaBorcNo.First().BorcnNo;
+                    //FirmaBorc firma = new FirmaBorc();
+                    //firma.BorcNo = borcnNo;
+                    //firma.FirmaId = guncelle.FirmaId;
+                    //firma.FirmaAd = txtFirmaAd.Text;
+                    //firma.Tarih = DateTime.Now;
+                    //firma.Aciklama = aciklama;
+                    //firma.ToplamTutar = odeme;
 
-                    db.FirmaBorc.Add(firma);
-                    db.SaveChanges();
-                    var borcNoArttir = db.FirmaBorcNo.First();
-                    borcNoArttir.BorcnNo += 1;
-                    db.SaveChanges();
+                    //db.FirmaBorc.Add(firma);
+                    //db.SaveChanges();
+                    //var borcNoArttir = db.FirmaBorcNo.First();
+                    //borcNoArttir.BorcnNo += 1;
+                    //db.SaveChanges();
 
                     btnKaydet.Text = "Kaydet";
                     Temizle();
@@ -222,73 +222,42 @@ namespace BarkodluSatis
 
         private void btnOdeme_Click(object sender, EventArgs e)
         {
-            double _genelborc = Islemler.DoubleYap(txtGenelBorc.Text);
-            double odeme;
-            string aciklama;
-            FrmGelirGider f = new FrmGelirGider();
-            f.gelirgider = "GİDER";
-            //f.kullanici = lblKullanici.Text;
-            f.ShowDialog();
-            odeme = f.tutar + f.tutar2;
-            aciklama = f.aciklama;
-            if (odeme != 0)
+            if(dgwFirma.Rows.Count > 0)
             {
-                txtKalan.Text = (Islemler.DoubleYap(txtKalan.Text) - odeme).ToString();
-              //  txtGenelBorc.Text = (_genelborc - odeme).ToString();
-                txtOdenen.Text = (Islemler.DoubleYap(txtOdenen.Text) + odeme).ToString();
-
-                int id = Convert.ToInt32(lblKullaniciId.Text);
-                using (var db = new BarkodDbEntities())
+                if(txtFirmaAd.Text!="" && txtGenelBorc.Text != "")
                 {
-                    var guncelle = db.FirmaBilgi.Where(x => x.FirmaId == id).FirstOrDefault();
-                    guncelle.FirmaAd = txtFirmaAd.Text;
-                    guncelle.Telefon = txtTelefon.Text;
-                    guncelle.Il = txtIl.Text;
-                    guncelle.Ilce = txtIlce.Text;
-                    guncelle.Aciklama = txtAciklama.Text;
-                    guncelle.GenelBorc = Islemler.DoubleYap(txtGenelBorc.Text);
-                    guncelle.Kalan = Islemler.DoubleYap(txtGenelBorc.Text) - Islemler.DoubleYap(txtOdenen.Text);
-                    guncelle.Odenen = Islemler.DoubleYap(txtOdenen.Text);
-                    db.SaveChanges();
-                    MessageBox.Show("Güncelleme yapılmıştır");
-                    int? borcnNo = db.FirmaBorcNo.First().BorcnNo;
-                    FirmaBorc firma = new FirmaBorc();
-                    firma.BorcNo = borcnNo;
-                    firma.FirmaId = guncelle.FirmaId;
-                    firma.FirmaAd = txtFirmaAd.Text;
-                    firma.Tarih = DateTime.Now;
-                    firma.Aciklama = aciklama;
-                    firma.ToplamTutar = odeme;
-
-                    db.FirmaBorc.Add(firma);
-                    db.SaveChanges();
-                    var borcNoArttir = db.FirmaBorcNo.First();
-                    borcNoArttir.BorcnNo += 1;
-                    db.SaveChanges();
-
+                    FrmFirmaOdemeEkranı odeme = new FrmFirmaOdemeEkranı();
+                    odeme._firmaId = Convert.ToInt32(lblKullaniciId.Text);
+                    odeme.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen ürüne tıkladıktan sonra düzenleme işlemine giriniz!");
+                }
+            }           
                     btnKaydet.Text = "Kaydet";
                     Temizle();
                     FirmaGetir();
-                }
-            }
+                
+            
         }
 
         private void detayGösterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgwFirma.Rows.Count > 0)
             {
-                if (txtFirmaAd.Text != "")
-                {
-                    int firmaid = Convert.ToInt32(lblKullaniciId.Text);
+                //if (txtFirmaAd.Text != "")
+                //{
+                    int firmaid = Convert.ToInt32(dgwFirma.CurrentRow.Cells["FirmaId"].Value.ToString());
                     var islemno = db.FirmaBorc.Where(x => x.FirmaId == firmaid).FirstOrDefault();
-                    int? borcnno = islemno.BorcNo;
+                    int? borcnno = islemno.BorcId;
                     if (borcnno != 0)
                     {
                         FrmFirmaBorcDetay f = new FrmFirmaBorcDetay();
-                        f.borcnno = (int)borcnno;
+                        f.borcnno = (int)firmaid;
                         f.ShowDialog();
                     }
-                }
+                //}
                 else
                 {
                     MessageBox.Show("Firma seçiniz");

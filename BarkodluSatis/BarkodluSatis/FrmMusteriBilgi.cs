@@ -18,6 +18,7 @@ namespace BarkodluSatis
         }
         BarkodDbEntities db = new BarkodDbEntities();
         public double _genelTutar { get; set; }
+        public bool satismi { get; set; }
         public FrmMusteriBilgi(string genelTutar): this()
         {
             _genelTutar = Islemler.DoubleYap(genelTutar);
@@ -83,7 +84,8 @@ namespace BarkodluSatis
                             musteri.Telefon = txtTelefon.Text;
                             musteri.Mahalle = txtMahalle.Text;
                             musteri.MusteriNo = Convert.ToInt32(txtMusteriNo.Text);
-                            musteri.OdemeTarihi = DateTime.Now;
+                        var dateTime = DateTime.Now.GetRidOfSeconds();
+                        musteri.OdemeTarihi = dateTime;
                             musteri.Odenen = 0;
                             musteri.GenelBorc = 0;
                             musteri.Kalan = 0;
@@ -162,12 +164,11 @@ namespace BarkodluSatis
             if (txtMusteriAra.Text.Length >= 3)
             {
                 string musteriad = txtMusteriAra.Text;
-                string mahalle;
+                string mahalle = txtMusteriAra.Text;
                 using (var db = new BarkodDbEntities())
                 {
                     if (cmbIslemTuru.SelectedIndex == 0)
                     {
-                        mahalle = cmbIslemTuru.Text;
                         db.MusteriBorcTakip.Where(x => x.Mahalle.Contains(mahalle)).ToList();
                         dgwMusteriler.DataSource = db.MusteriBorcTakip.Local.ToList();
                     }
@@ -180,49 +181,71 @@ namespace BarkodluSatis
                 }
                 Islemler.GridDuzenle(dgwMusteriler);
             }
+            else { dgwMusteriler.DataSource = db.MusteriBorcTakip.ToList(); }
         }
 
         private void dgwMusteriler_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            int musterino = Convert.ToInt32(dgwMusteriler.CurrentRow.Cells["MusteriNo"].Value.ToString());
-            string ad = dgwMusteriler.CurrentRow.Cells["Ad"].Value.ToString();
-            string soyad = dgwMusteriler.CurrentRow.Cells["Soyad"].Value.ToString();
-            string telefon = dgwMusteriler.CurrentRow.Cells["Telefon"].Value.ToString();
-            string mahalle = dgwMusteriler.CurrentRow.Cells["Mahalle"].Value.ToString();
-            double genelborc = Convert.ToDouble(dgwMusteriler.CurrentRow.Cells["GenelBorc"].Value.ToString());
-            double odenen = Convert.ToDouble(dgwMusteriler.CurrentRow.Cells["Odenen"].Value.ToString());
-            double kalan = Convert.ToDouble(dgwMusteriler.CurrentRow.Cells["kalan"].Value.ToString());
-            double eklenecekTutar = _genelTutar;
-            DialogResult onay = MessageBox.Show(ad + " adlı kullanıcıyı seçmek istediğinizden emin misiniz?", "Ürün Veresiye Satış İşlemi", MessageBoxButtons.YesNo);
-            if (_genelTutar != 0)
+            if (satismi)//eğer satış ekranından geldiyse 
             {
-                if (onay == DialogResult.Yes)//seçilen müşteri onaylandığında satış gerçekleşecek
-                {
-                    FrmSatis f = (FrmSatis)Application.OpenForms["FrmSatis"];
-                    f._musteriNo = musterino;
-                    f.SatisYap("Veresiye");
-                    using (var db = new BarkodDbEntities())
-                    {
-                        var guncelle = db.MusteriBorcTakip.Where(x => x.MusteriNo == musterino).FirstOrDefault();
-                        guncelle.GenelBorc += eklenecekTutar;
-                        guncelle.Kalan += eklenecekTutar;
-                        db.SaveChanges();
 
-                        BorcOzet borcOzet = new BorcOzet();
-                        borcOzet.MusteriNo = musterino;
-                        borcOzet.Ad = ad;
-                        borcOzet.Soyad = soyad;
-                        borcOzet.Tarih = DateTime.Now;
-                        borcOzet.Eklenen = eklenecekTutar;
-                        borcOzet.Kalan += eklenecekTutar;
-                        db.BorcOzet.Add(borcOzet);
-                        db.SaveChanges();
+                int musterino = Convert.ToInt32(dgwMusteriler.CurrentRow.Cells["MusteriNo"].Value.ToString());
+                string ad = dgwMusteriler.CurrentRow.Cells["Ad"].Value.ToString();
+                string soyad = dgwMusteriler.CurrentRow.Cells["Soyad"].Value.ToString();
+                string telefon = dgwMusteriler.CurrentRow.Cells["Telefon"].Value.ToString();
+                string mahalle = dgwMusteriler.CurrentRow.Cells["Mahalle"].Value.ToString();
+                double genelborc = Convert.ToDouble(dgwMusteriler.CurrentRow.Cells["GenelBorc"].Value.ToString());
+                double odenen = Convert.ToDouble(dgwMusteriler.CurrentRow.Cells["Odenen"].Value.ToString());
+                double kalan = Convert.ToDouble(dgwMusteriler.CurrentRow.Cells["kalan"].Value.ToString());
+                double eklenecekTutar = _genelTutar;
+                DialogResult onay = MessageBox.Show(ad + " adlı kullanıcıyı seçmek istediğinizden emin misiniz?", "Ürün Veresiye Satış İşlemi", MessageBoxButtons.YesNo);
+                if (_genelTutar != 0)
+                {
+                    if (onay == DialogResult.Yes)//seçilen müşteri onaylandığında satış gerçekleşecek
+                    {
+                        FrmSatis f = (FrmSatis)Application.OpenForms["FrmSatis"];
+                        f._musteriNo = musterino;
+                        f.SatisYap("Veresiye");
+                        using (var db = new BarkodDbEntities())
+                        {
+                            var guncelle = db.MusteriBorcTakip.Where(x => x.MusteriNo == musterino).FirstOrDefault();
+                            guncelle.GenelBorc += eklenecekTutar;
+                            guncelle.Kalan += eklenecekTutar;
+                            db.SaveChanges();
+
+                            BorcOzet borcOzet = new BorcOzet();
+                            borcOzet.MusteriNo = musterino;
+                            borcOzet.Ad = ad;
+                            borcOzet.Soyad = soyad;
+                            var dateTime = DateTime.Now.GetRidOfSeconds();
+                            borcOzet.Tarih = dateTime;
+                            borcOzet.Eklenen = eklenecekTutar;
+                            borcOzet.Kalan += eklenecekTutar;
+                            db.BorcOzet.Add(borcOzet);
+                            db.SaveChanges();
+                        }
+                        this.Hide();
                     }
-                    this.Hide();
                 }
+                else { MessageBox.Show("Lütfen satmak istediğiniz ürünleri seçiniz..."); }
             }
-            else { MessageBox.Show("Lütfen satmak istediğiniz ürünleri seçiniz..."); }
+        }
+
+        private void ödemeAlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int musterino = Convert.ToInt32(dgwMusteriler.CurrentRow.Cells["MusteriNo"].Value.ToString());
+            string musteriAd = dgwMusteriler.CurrentRow.Cells["Ad"].Value.ToString();
+            string musteriSoyad = dgwMusteriler.CurrentRow.Cells["Soyad"].Value.ToString();
+            double genelBorc = Islemler.DoubleYap(dgwMusteriler.CurrentRow.Cells["GenelBorc"].Value.ToString());
+            double kalanBorc = Islemler.DoubleYap(dgwMusteriler.CurrentRow.Cells["Kalan"].Value.ToString());
+            FrmMusteriOdemeAlma f = new FrmMusteriOdemeAlma();
+            f._musteriNo = musterino;
+            f._musteriAd = musteriAd;
+            f._musteriSoyad = musteriSoyad;
+            f._genelBorc = genelBorc;
+            f._kalanBorc = kalanBorc;
+            f.ShowDialog();
+            this.Hide();
         }
     }
 }   

@@ -23,10 +23,9 @@ namespace BarkodluSatis
             lblIslemNo.Text = "İşlem No: " + islemno.ToString();
             using (var db = new BarkodDbEntities())
             {
-                dgwListe.DataSource = db.Satis.Select(x => new { x.IslemNo, x.UrunAd, x.UrunGrup, x.Miktar, x.Toplam ,x.Tarih}).Where(x => x.IslemNo == islemno).ToList();
+                dgwListe.DataSource = db.Satis.Select(x => new { x.IslemNo, x.UrunAd, x.UrunGrup, x.Miktar, x.Toplam, x.Tarih }).Where(x => x.IslemNo == islemno).ToList();
                 Islemler.GridDuzenle(dgwListe);
             }
         }
-
     }
 }

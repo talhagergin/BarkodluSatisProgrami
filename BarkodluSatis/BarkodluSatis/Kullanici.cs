@@ -27,5 +27,7 @@ namespace BarkodluSatis
         public Nullable<bool> Ayarlar { get; set; }
         public Nullable<bool> FiyatGuncelle { get; set; }
         public Nullable<bool> Yedekleme { get; set; }
+        public Nullable<bool> Musteri { get; set; }
+        public Nullable<bool> Firma { get; set; }
     }
 }

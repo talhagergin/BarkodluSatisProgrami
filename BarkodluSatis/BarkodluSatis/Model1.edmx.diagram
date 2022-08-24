@@ -20,10 +20,10 @@
         <EntityTypeShape EntityType="BarkodDbModel.MusteriNumara" Width="1.5" PointX="9.25" PointY="3.375" />
         <EntityTypeShape EntityType="BarkodDbModel.MusteriBorcTakip" Width="1.5" PointX="11" PointY="4.875" />
         <EntityTypeShape EntityType="BarkodDbModel.BorcOzet" Width="1.5" PointX="11" PointY="1.875" />
-        <EntityTypeShape EntityType="BarkodDbModel.FirmaBilgi" Width="1.5" PointX="4" PointY="6" />
-        <EntityTypeShape EntityType="BarkodDbModel.FirmaBorc" Width="1.5" PointX="5.5" PointY="6" />
-        <EntityTypeShape EntityType="BarkodDbModel.FirmaBorcNo" Width="1.5" PointX="9" PointY="7.375" />
         <EntityTypeShape EntityType="BarkodDbModel.MusteriVeIslemNo" Width="1.5" PointX="9.25" PointY="5" />
+        <EntityTypeShape EntityType="BarkodDbModel.FirmaBilgi" Width="1.5" PointX="4.375" PointY="6.75" />
+        <EntityTypeShape EntityType="BarkodDbModel.FirmaBorc" Width="1.5" PointX="6.375" PointY="6.75" />
+        <EntityTypeShape EntityType="BarkodDbModel.FirmaOdenenDetay" Width="1.5" PointX="8.25" PointY="7" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

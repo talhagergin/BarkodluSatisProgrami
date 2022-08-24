@@ -354,7 +354,8 @@ namespace BarkodluSatis
                     satis.KdvTutari = Islemler.DoubleYap(dgwSatisListesi.Rows[i].Cells["KdvTutari"].Value.ToString())*Islemler.DoubleYap(satis.Miktar.ToString());
                     satis.OdemeSekli = odemeSekli;
                     satis.Iade = satisIade;
-                    satis.Tarih = DateTime.Now;
+                    var dateTimee = DateTime.Now.GetRidOfSeconds();
+                    satis.Tarih = dateTimee;
                     satis.Kullanici = lblKullanici.Text;
                     db.Satis.Add(satis);
                     db.SaveChanges();
@@ -386,8 +387,11 @@ namespace BarkodluSatis
                 }
                 io.OdemeSekli = odemeSekli;
                 io.Kullanici = lblKullanici.Text;
-                io.Tarih = DateTime.Now;
-                switch(odemeSekli)
+                var dateTime = DateTime.Now.GetRidOfSeconds();
+                io.Tarih = dateTime;
+
+                MessageBox.Show(dateTime.ToString());
+                switch (odemeSekli)
                 {
                     case "Nakit":
                         io.Nakit = Islemler.DoubleYap(txtGenelToplam.Text);
@@ -543,6 +547,7 @@ namespace BarkodluSatis
         {
             string tutar = txtGenelToplam.Text;
             FrmMusteriBilgi musteri = new FrmMusteriBilgi(tutar);
+            musteri.satismi = true;
             musteri.Show();
         }
     }

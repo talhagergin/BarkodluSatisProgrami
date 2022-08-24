@@ -142,6 +142,8 @@
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
             this.Text = "GİRİŞ";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.Shown += new System.EventHandler(this.FrmLogin_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

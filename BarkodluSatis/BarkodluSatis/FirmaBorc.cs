@@ -14,7 +14,7 @@ namespace BarkodluSatis
     
     public partial class FirmaBorc
     {
-        public int Id { get; set; }
+        public int BorcId { get; set; }
         public int FirmaId { get; set; }
         public string FirmaAd { get; set; }
         public string UrunAd { get; set; }
@@ -22,8 +22,8 @@ namespace BarkodluSatis
         public string Birim { get; set; }
         public Nullable<double> Miktar { get; set; }
         public Nullable<System.DateTime> Tarih { get; set; }
-        public Nullable<double> ToplamTutar { get; set; }
-        public Nullable<int> BorcNo { get; set; }
+        public Nullable<double> Eklenen { get; set; }
         public string Aciklama { get; set; }
+        public Nullable<double> ToplamTutar { get; set; }
     }
 }

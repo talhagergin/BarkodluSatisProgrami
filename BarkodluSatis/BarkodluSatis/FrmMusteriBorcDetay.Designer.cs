@@ -112,7 +112,7 @@
             this.dgwBorc.RowTemplate.Height = 32;
             this.dgwBorc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwBorc.Size = new System.Drawing.Size(680, 261);
-            this.dgwBorc.TabIndex = 24;
+            this.dgwBorc.TabIndex = 23;
             // 
             // FrmMusteriBorcDetay
             // 

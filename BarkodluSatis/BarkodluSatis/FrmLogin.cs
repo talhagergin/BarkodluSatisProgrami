@@ -15,6 +15,7 @@ namespace BarkodluSatis
         public FrmLogin()
         {
             InitializeComponent();
+
         }
 
         private void btnGiris_Click(object sender, EventArgs e)
@@ -51,10 +52,6 @@ namespace BarkodluSatis
                                 f.Show();
                                 this.Hide();
                                 }
-
-                              
-
-
                                 Cursor.Current = Cursors.Default;
                             }
                             else
@@ -120,6 +117,34 @@ namespace BarkodluSatis
             Lic lic = new Lic();
             label1.Text = lic.CpuNo() + "\n" + lic.CpuKarakterToplam().ToString();
 
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+//#if DEBUG
+//            using (var db = new BarkodDbEntities())
+//            {
+//                var bak = db.Kullanici.Where(x => x.KullaniciAd == "admin" && x.Sifre == "admin").FirstOrDefault();
+//                FrmBaslangic f = new FrmBaslangic();
+//                f.btnSatisIslemi.Enabled = (bool)bak.Satis;
+//                f.btnGenelRapor.Enabled = (bool)bak.Rapor;
+//                f.btnStokTakibi.Enabled = (bool)bak.Stok;
+//                f.btnUrunGiris.Enabled = (bool)bak.UrunGiris;
+//                f.btnAyarlar.Enabled = (bool)bak.Ayarlar;
+//                f.btnFiyatGüncelle.Enabled = (bool)bak.FiyatGuncelle;
+//                f.btnYedekleme.Enabled = (bool)bak.Yedekleme;
+//                f.lblKullanici.Text = bak.AdSoyad;
+//                f.Show();
+//                this.Hide();
+//            }
+//#endif
+        }
+
+        private void FrmLogin_Shown(object sender, EventArgs e)
+        {
+//#if DEBUG 
+//            this.Hide();
+//#endif
         }
     }
 }

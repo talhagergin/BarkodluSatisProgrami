@@ -142,7 +142,8 @@ namespace BarkodluSatis
                 sh.Miktar = miktar;
                 sh.UrunGrup= urungrup;
                 sh.Kullanici= kullanici;
-                sh.Tarih = DateTime.Now;
+                var dateTime = DateTime.Now.GetRidOfSeconds();
+                sh.Tarih = dateTime;
                 db.StokHareket.Add(sh);
                 db.SaveChanges();
             }
@@ -213,6 +214,13 @@ namespace BarkodluSatis
                 }
             }
         }
-       
+        public static DateTime GetRidOfSeconds(this DateTime dt)
+        {
+            return dt.AddSeconds(-dt.Second);
+        }
+        //public static bool ZartZurtEqual(this DateTime dt,DateTime dt2)
+        //{
+        //    return dt.Day == dt2.Day && dt.Month == dt2.Month && dt.Year == dt2.Year && dt.Hour == dt2.Hour && dt.Minute == dt2.Minute;
+        //}
     }
 }

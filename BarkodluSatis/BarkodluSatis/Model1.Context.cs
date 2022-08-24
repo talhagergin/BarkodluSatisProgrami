@@ -40,9 +40,9 @@ namespace BarkodluSatis
         public virtual DbSet<MusteriNumara> MusteriNumara { get; set; }
         public virtual DbSet<MusteriBorcTakip> MusteriBorcTakip { get; set; }
         public virtual DbSet<BorcOzet> BorcOzet { get; set; }
+        public virtual DbSet<MusteriVeIslemNo> MusteriVeIslemNo { get; set; }
         public virtual DbSet<FirmaBilgi> FirmaBilgi { get; set; }
         public virtual DbSet<FirmaBorc> FirmaBorc { get; set; }
-        public virtual DbSet<FirmaBorcNo> FirmaBorcNo { get; set; }
-        public virtual DbSet<MusteriVeIslemNo> MusteriVeIslemNo { get; set; }
+        public virtual DbSet<FirmaOdenenDetay> FirmaOdenenDetay { get; set; }
     }
 }

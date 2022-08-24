@@ -23,9 +23,12 @@ namespace BarkodluSatis
             lblBorcNo.Text = "Borç No: " + borcnno.ToString();
             using (var db = new BarkodDbEntities())
             {
-                dgwListe.DataSource = db.FirmaBorc.Select(x => new { x.BorcNo, x.UrunAd, x.UrunGrup, x.Miktar, x.ToplamTutar, x.Tarih,x.Aciklama }).Where(x => x.BorcNo == borcnno).ToList();
+                dgwListe.DataSource = db.FirmaBorc.Select(x => new { x.FirmaId,x.BorcId, x.UrunAd, x.UrunGrup, x.Miktar, x.Eklenen, x.Tarih, x.Aciklama }).Where(x => x.FirmaId == borcnno).OrderByDescending(x=>x.Tarih).ToList();
+                dgwListeOdeme.DataSource = db.FirmaOdenenDetay.Select(x => new { x.FirmaId, x.OdemeSekli, x.Nakit, x.Kart, x.ToplamTutar, x.Tarih, x.Aciklama }).Where(x => x.FirmaId == borcnno).OrderBy(x=>x.Tarih).ToList();
                 Islemler.GridDuzenle(dgwListe);
+                Islemler.GridDuzenle(dgwListeOdeme);
             }
         }
+
     }
 }

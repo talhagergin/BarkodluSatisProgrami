@@ -67,6 +67,8 @@ namespace BarkodluSatis
                                     k.Ayarlar = chbAyarlar.Checked;
                                     k.FiyatGuncelle = chbFiyatGuncelle.Checked;
                                     k.Yedekleme = chbYedekleme.Checked;
+                                    k.Musteri = chbMusteri.Checked;
+                                    k.Firma = chbFirma.Checked;
                                     db.Kullanici.Add(k);
                                     db.SaveChanges();
                                     Doldur();

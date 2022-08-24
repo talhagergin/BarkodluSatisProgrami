@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMusteriBilgi));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lStandart6 = new BarkodluSatis.lStandart();
+            this.cmbIslemTuru = new System.Windows.Forms.ComboBox();
             this.btnYeniMusteri = new BarkodluSatis.bStandart();
             this.txtMahalle = new BarkodluSatis.tStandart();
             this.txtTelefon = new System.Windows.Forms.MaskedTextBox();
@@ -58,8 +60,7 @@
             this.musteriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.barkodDbDataSet = new BarkodluSatis.BarkodDbDataSet();
             this.musteriTableAdapter = new BarkodluSatis.BarkodDbDataSetTableAdapters.MusteriTableAdapter();
-            this.lStandart6 = new BarkodluSatis.lStandart();
-            this.cmbIslemTuru = new System.Windows.Forms.ComboBox();
+            this.ödemeAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -106,6 +107,30 @@
             this.splitContainer1.Size = new System.Drawing.Size(834, 522);
             this.splitContainer1.SplitterDistance = 204;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // lStandart6
+            // 
+            this.lStandart6.AutoSize = true;
+            this.lStandart6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lStandart6.ForeColor = System.Drawing.Color.Navy;
+            this.lStandart6.Location = new System.Drawing.Point(346, 169);
+            this.lStandart6.Name = "lStandart6";
+            this.lStandart6.Size = new System.Drawing.Size(130, 20);
+            this.lStandart6.TabIndex = 41;
+            this.lStandart6.Text = "Arama Kategorisi";
+            // 
+            // cmbIslemTuru
+            // 
+            this.cmbIslemTuru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIslemTuru.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbIslemTuru.FormattingEnabled = true;
+            this.cmbIslemTuru.Items.AddRange(new object[] {
+            "Mahalleye Göre Sırala",
+            "İsme Göre Sırala"});
+            this.cmbIslemTuru.Location = new System.Drawing.Point(498, 164);
+            this.cmbIslemTuru.Name = "cmbIslemTuru";
+            this.cmbIslemTuru.Size = new System.Drawing.Size(234, 31);
+            this.cmbIslemTuru.TabIndex = 40;
             // 
             // btnYeniMusteri
             // 
@@ -357,28 +382,29 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.detayGösterToolStripMenuItem,
             this.düzenleToolStripMenuItem,
-            this.silToolStripMenuItem});
+            this.silToolStripMenuItem,
+            this.ödemeAlToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(142, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
             // 
             // detayGösterToolStripMenuItem
             // 
             this.detayGösterToolStripMenuItem.Name = "detayGösterToolStripMenuItem";
-            this.detayGösterToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.detayGösterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.detayGösterToolStripMenuItem.Text = "Detay Göster";
             this.detayGösterToolStripMenuItem.Click += new System.EventHandler(this.detayGösterToolStripMenuItem_Click);
             // 
             // düzenleToolStripMenuItem
             // 
             this.düzenleToolStripMenuItem.Name = "düzenleToolStripMenuItem";
-            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.düzenleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.düzenleToolStripMenuItem.Text = "Düzenle";
             this.düzenleToolStripMenuItem.Click += new System.EventHandler(this.düzenleToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
@@ -396,29 +422,12 @@
             // 
             this.musteriTableAdapter.ClearBeforeFill = true;
             // 
-            // lStandart6
+            // ödemeAlToolStripMenuItem
             // 
-            this.lStandart6.AutoSize = true;
-            this.lStandart6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lStandart6.ForeColor = System.Drawing.Color.Navy;
-            this.lStandart6.Location = new System.Drawing.Point(346, 169);
-            this.lStandart6.Name = "lStandart6";
-            this.lStandart6.Size = new System.Drawing.Size(130, 20);
-            this.lStandart6.TabIndex = 41;
-            this.lStandart6.Text = "Arama Kategorisi";
-            // 
-            // cmbIslemTuru
-            // 
-            this.cmbIslemTuru.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIslemTuru.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbIslemTuru.FormattingEnabled = true;
-            this.cmbIslemTuru.Items.AddRange(new object[] {
-            "Mahalleye Göre Sırala",
-            "İsme Göre Sırala"});
-            this.cmbIslemTuru.Location = new System.Drawing.Point(498, 164);
-            this.cmbIslemTuru.Name = "cmbIslemTuru";
-            this.cmbIslemTuru.Size = new System.Drawing.Size(234, 31);
-            this.cmbIslemTuru.TabIndex = 40;
+            this.ödemeAlToolStripMenuItem.Name = "ödemeAlToolStripMenuItem";
+            this.ödemeAlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ödemeAlToolStripMenuItem.Text = "Ödeme Al";
+            this.ödemeAlToolStripMenuItem.Click += new System.EventHandler(this.ödemeAlToolStripMenuItem_Click);
             // 
             // FrmMusteriBilgi
             // 
@@ -473,5 +482,6 @@
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private lStandart lStandart6;
         private System.Windows.Forms.ComboBox cmbIslemTuru;
+        private System.Windows.Forms.ToolStripMenuItem ödemeAlToolStripMenuItem;
     }
 }
