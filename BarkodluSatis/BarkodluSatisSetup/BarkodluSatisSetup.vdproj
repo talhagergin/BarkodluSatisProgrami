@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_0B330796F43B0ABDD9C7C2AC5AB57279"
         "OwnerKey" = "8:_101EB22E336781D07EBEAA0309634D53"
         "MsmSig" = "8:_UNDEFINED"
@@ -34,7 +28,7 @@
         "Entry"
         {
         "MsmKey" = "8:_0B330796F43B0ABDD9C7C2AC5AB57279"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,7 +40,7 @@
         "Entry"
         {
         "MsmKey" = "8:_101EB22E336781D07EBEAA0309634D53"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +52,7 @@
         "Entry"
         {
         "MsmKey" = "8:_1F9A4308D0353DB023AC9ADD41831D31"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,18 +64,18 @@
         "Entry"
         {
         "MsmKey" = "8:_305308C49623B9FE77B9CE5132607EC6"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_352B1703029B4B20AC40002A51E031DC"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_413B131CFB6C4E04971117CE295D22CC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -94,7 +88,7 @@
         "Entry"
         {
         "MsmKey" = "8:_6492C5592CF66334A718216FCB20BDF9"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,7 +100,7 @@
         "Entry"
         {
         "MsmKey" = "8:_650AB35B79B2B1764CB4B9606C87FC56"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -123,14 +117,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9866F60FCB73473687DA69A22FF21FF3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_A0E697A7806D8258FC13641878DF776F"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -148,13 +136,19 @@
         "Entry"
         {
         "MsmKey" = "8:_A341F24ECD9F9DFE44FFAF54D802B8E2"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_B08663A3061A9A8005370B83724C4143"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B56C85D64F22456FA2841DED7D6BCC73"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -166,7 +160,7 @@
         "Entry"
         {
         "MsmKey" = "8:_BCE5DBB021729184DAB99ADDACFBC796"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -178,7 +172,7 @@
         "Entry"
         {
         "MsmKey" = "8:_C402B366C3A7B17BEB3541F32790EAAF"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -196,7 +190,7 @@
         "Entry"
         {
         "MsmKey" = "8:_C58F25058CD7CD0768A0F19197E1F391"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -214,7 +208,7 @@
         "Entry"
         {
         "MsmKey" = "8:_F198FEA443F357AA9F6BFF7836F104FE"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -226,7 +220,7 @@
         "Entry"
         {
         "MsmKey" = "8:_F1CC67A08FA1C9F179A320E5C6CBB3CF"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -237,26 +231,26 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+        "MsmKey" = "8:_F6F5C316EF664822AFB01ECA104A1612"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_02BD98CCD7F34BA98FE9937C99083CD8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1F9A4308D0353DB023AC9ADD41831D31"
+        "OwnerKey" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_CD67CD62DB184997B287A2B09FFEC209"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_02BD98CCD7F34BA98FE9937C99083CD8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -317,6 +311,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A0E697A7806D8258FC13641878DF776F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1F9A4308D0353DB023AC9ADD41831D31"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -602,26 +602,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_352B1703029B4B20AC40002A51E031DC"
-            {
-            "SourcePath" = "8:..\\BarkodluSatis\\bin\\Debug\\BarkodDb.mdf"
-            "TargetName" = "8:BarkodDb.mdf"
-            "Tag" = "8:"
-            "Folder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_413B131CFB6C4E04971117CE295D22CC"
             {
             "SourcePath" = "8:..\\BarkodluSatis\\bin\\Debug\\rpGenelRapor.rdlc"
@@ -764,26 +744,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9866F60FCB73473687DA69A22FF21FF3"
-            {
-            "SourcePath" = "8:..\\BarkodluSatis\\bin\\Debug\\BarkodDb_log.ldf"
-            "TargetName" = "8:BarkodDb_log.ldf"
-            "Tag" = "8:"
-            "Folder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A0E697A7806D8258FC13641878DF776F"
             {
             "AssemblyRegister" = "3:1"
@@ -875,6 +835,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B56C85D64F22456FA2841DED7D6BCC73"
+            {
+            "SourcePath" = "8:..\\BarkodluSatis\\bin\\Debug\\BarkodDb.mdf"
+            "TargetName" = "8:BarkodDb.mdf"
+            "Tag" = "8:"
+            "Folder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BCE5DBB021729184DAB99ADDACFBC796"
@@ -1083,6 +1063,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F6F5C316EF664822AFB01ECA104A1612"
+            {
+            "SourcePath" = "8:..\\BarkodluSatis\\bin\\Debug\\BarkodDb_log.ldf"
+            "TargetName" = "8:BarkodDb_log.ldf"
+            "Tag" = "8:"
+            "Folder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -1150,15 +1150,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Barkodlu Satis Programi"
-        "ProductCode" = "8:{8F914CDB-6C18-4DC5-9365-D9ADF7E38F3D}"
-        "PackageCode" = "8:{5919C0C4-FB9A-418C-AD74-4B7450D44781}"
+        "ProductCode" = "8:{89A9EBBB-78F9-4BC4-A0FC-693DAE8DBAE7}"
+        "PackageCode" = "8:{014C88A7-EFAF-4AFC-BB52-A8929B019CA0}"
         "UpgradeCode" = "8:{B1CB5380-FF9A-4534-8953-B0C9912BD83F}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:TALHA GERGIN"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1168,7 +1168,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_4C435A1C97764A129FB078A4A4628323"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -1271,35 +1271,35 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_305CF2839529432B9B59F2B7000A6220"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A9175A544C3D4FAF8B96BFDBE739F596"
             {
-            "Name" = "8:Barkodlu Satış Programı"
+            "Name" = "8:Barkodlu Satış Programım"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:"
-            "Folder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
-            "WorkingFolder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
-            "Icon" = "8:_4C435A1C97764A129FB078A4A4628323"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_493FA98250A240298462376BB5399D7A"
-            {
-            "Name" = "8:Barkodlu Satış Programı"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:"
+            "Target" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
             "Folder" = "8:_F28553787753496E91CB2D2C3D740D4E"
             "WorkingFolder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
             "Icon" = "8:_4C435A1C97764A129FB078A4A4628323"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6683A19CBF6D401B904F729722743493"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B0B66ED8F36D49B89E712AC73A58F8DA"
+            {
+            "Name" = "8:Barkodlu Satıış Programı"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
+            "Folder" = "8:_CFDE2F80DBB34AAC90B1FCD02D9A119B"
+            "WorkingFolder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
+            "Icon" = "8:_4C435A1C97764A129FB078A4A4628323"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C51D8264ECE041A7BB40D77DD2848C50"
             {
             "Name" = "8:Barkodlu Satış Programı"
             "Arguments" = "8:"
@@ -1307,10 +1307,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:"
-            "Folder" = "8:_CFDE2F80DBB34AAC90B1FCD02D9A119B"
+            "Target" = "8:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
+            "Folder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
             "WorkingFolder" = "8:_5284C44E33ED4BDD945F01D9FE034413"
-            "Icon" = "8:_4C435A1C97764A129FB078A4A4628323"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
@@ -1712,7 +1712,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0575DEBE4AD24B508E6D5EBAC3CB73BC"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_416034BE6A8C4C2AB91A1C0BBCDD3A6E"
             {
             "SourcePath" = "8:..\\BarkodluSatis\\obj\\Debug\\BarkodluSatis.exe"
             "TargetName" = "8:"
